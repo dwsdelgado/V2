@@ -1,0 +1,161 @@
+---
+import projects from '@/data/projects.json'
+import MobileStoreBadges from './ui/MobileStoreBadges.astro'
+import Skills from './ui/Skills.astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import { getImageFromAssets } from '@/utils'
+
+const { condensed = false } = Astro.props
+
+const items = condensed ? projects.slice(0, 3) : projects
+---
+
+<section
+	class:list={['pb-20 scroll-m-32', Astro.props.class]}
+	id="projects"
+>
+	<div class="space-y-12 animate">
+		<div class="text-center space-y-4">
+			<h2 class="section-title">Proyectos Destacados</h2>
+			<p class="text-stone-600 dark:text-stone-400 text-lg max-w-3xl mx-auto">
+				Una colección de trabajos que demuestra mi pasión por crear.
+			</p>
+		</div>
+
+		<div class='grid gap-8 '>
+		{
+			items.map((project, index) => (
+				<div class="card p-8 group hover:shadow-xl">
+					<div
+						class:list={[
+							'grid gap-8 items-center',
+							project.demoImage || project.demoVideo || project.demoIframe
+								? 'lg:grid-cols-2'
+								: 'grid-cols-1',
+						]}
+					>
+						<div class="space-y-6">
+							<div class="space-y-4">
+								<div class="flex items-center gap-3 flex-wrap">
+									{project.logoUrl && (
+										<Image
+											src={getImageFromAssets(project.logoUrl)}
+											alt={`Logo - ${project.title}`}
+											class="rounded-lg shadow-xs"
+											width={48}
+											height={48}
+											loading={index === 0 ? 'eager' : 'lazy'}
+										/>
+									)}
+									<div class="flex">
+										<h3 class="text-xl font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
+											<a
+												href={project.url}
+												class="flex items-center gap-2"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{project.title}
+												<Icon name="carbon:launch" class="size-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+											</a>
+										</h3>
+										{project.date && (
+											<p class="text-stone-500 dark:text-stone-400 text-sm font-medium">
+												{project.date}
+											</p>
+										)}
+									</div>
+								</div>
+								
+								<p
+									class="text-stone-600 dark:text-stone-400 leading-relaxed"
+									set:html={project.description}
+								/>
+							</div>
+
+							<Skills list={project.skills || []} />
+
+							{(project.androidUrl || project.iosUrl) && (
+								<MobileStoreBadges
+									androidUrl={project.androidUrl}
+									iosUrl={project.iosUrl}
+								/>
+							)}
+						</div>
+
+						{(project.demoImage || project.demoVideo || project.demoIframe) && (
+							<div class="space-y-4">
+								{project.demoIframe && (
+									<iframe
+										class="w-full h-[500px] rounded-xl bg-stone-100 dark:bg-stone-800 shadow-inner"
+										loading="lazy"
+										title={`Demo - ${project.title}`}
+										id={`iframe-${project.title.replace(/\s+/g, '-').toLowerCase()}`}
+										data-src={project.demoIframe}
+									/>
+								)}
+								{project.demoImage && (
+									<a
+										href={project.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block group/image"
+									>
+										<Image
+											height={400}
+											src={getImageFromAssets(project.demoImage)}
+											alt={`Demo - ${project.title}`}
+											class="rounded-xl shadow-lg group-hover/image:shadow-xl transition-shadow duration-300 w-full object-cover"
+											loading="lazy"
+										/>
+									</a>
+								)}
+								{project.demoVideo && (
+									<a
+										href={project.url}
+										aria-label={`Demo - ${project.title}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block group/video"
+									>
+										<video
+											src={project.demoVideo}
+											class="rounded-xl aspect-video w-full object-cover shadow-lg group-hover/video:shadow-xl transition-shadow duration-300"
+											height={300}
+											autoplay
+											loop
+											muted
+										/>
+									</a>
+								)}
+								{project.demoDescription && (
+									<p
+										class="text-xs text-stone-500 dark:text-stone-400 text-center italic"
+										set:html={project.demoDescription}
+									/>
+								)}
+							</div>
+						)}
+					</div>
+				</div>
+			))
+		}
+		</div>
+	</div>
+</section>
+
+<script>
+	// Load iframes after the page loads to not affect lighthouse score
+	document.addEventListener('DOMContentLoaded', () => {
+		const iframes = document.querySelectorAll('iframe[data-src]');
+		
+		iframes.forEach(iframe => {
+			const src = iframe.getAttribute('data-src');
+			if (src && iframe instanceof HTMLIFrameElement) {
+				iframe.src = src;
+				iframe.removeAttribute('data-src');
+			}
+		});
+	});
+</script>

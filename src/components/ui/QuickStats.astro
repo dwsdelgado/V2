@@ -1,0 +1,129 @@
+---
+import me from '@/data/me.json'
+import { Icon } from 'astro-icon/components'
+import { GITHUB_TOKEN, WAKATIME_UUID } from 'astro:env/server'
+
+const yearsExperience =
+	new Date().getFullYear() - new Date(me.firstJobDate).getFullYear()
+
+export const GETCommitsLast12Months = async () => {
+	const twelveMonthsAgo = new Date(
+		new Date().setMonth(new Date().getMonth() - 12)
+	).toISOString()
+
+	try {
+		const res = await fetch(
+			`https://api.github.com/search/commits?q=committer-date:>${twelveMonthsAgo} author:${me.github}`,
+			{
+				headers: {
+					Authorization: GITHUB_TOKEN && GITHUB_TOKEN !== 'your_github_token_here' ? `Bearer ${GITHUB_TOKEN}` : '',
+					Accept: 'application/vnd.github.v3+json',
+					'User-Agent': 'astro',
+				},
+			}
+		)
+
+		const responseText = await res.text()
+
+		const data = JSON.parse(responseText)
+		const { total_count: nonWorkCommits } = data as {
+			total_count: number
+		}
+
+		return nonWorkCommits
+	} catch (error) {
+		console.error('Error fetching GitHub commits:', error)
+		return 0
+	}
+}
+
+export const GETMostUsedLanguageLastWeek = async () => {
+	if (!WAKATIME_UUID || WAKATIME_UUID === 'your_wakatime_uuid_here') return 'Missing WAKATIME_UUID'
+
+	try {
+		const res = await fetch(
+			`https://wakatime.com/api/v1/users/${WAKATIME_UUID}/stats/last_7_days?timeout=15`
+		)
+
+		const responseText = await res.text()
+
+		const data = JSON.parse(responseText)
+
+		const { data: wakaData } = data as {
+			data: { languages: { name: string }[] }
+		}
+
+		return wakaData.languages[0].name
+	} catch (error) {
+		console.error('Error fetching WakaTime data:', error)
+		return 'API_ERROR'
+	}
+}
+
+const commitsLast12Months = await GETCommitsLast12Months()
+
+const mostUsedLanguageLastWeek = await GETMostUsedLanguageLastWeek()
+
+const quickStats = [
+  {
+    label: 'Años de experiencia',
+    value: yearsExperience + '+',
+    tooltip: null,
+  },
+  {
+    label: 'Commits en los últimos 12 meses',
+    value: commitsLast12Months || 0,
+    tooltip: null, // quitamos tooltip en español
+  },
+  {
+    label: 'Tecnologías más usadas',
+    value: 'Bash/Docker/Yaml',
+    tooltip: null, // quitamos WakaTime
+  },
+  {
+    label: 'Tazas de café al día',
+    value: '∞',
+    tooltip: null,
+  },
+]
+
+---
+
+<div class='animate'>
+	<div class:list={[`py-8 mt-12 card`, Astro.props.class]}>
+		<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 animate'>
+			{
+				quickStats.map((stat) => (
+					<div class='text-center'>
+						<div
+							class:list={[
+								'text-2xl font-semibold text-stone-900 dark:text-stone-100 mb-1',
+							]}
+							id={stat.label}
+						>
+							{stat.value}
+						</div>
+						<div
+							class:list={[
+								'tooltip text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wide mt-2 !flex justify-center items-end gap-1 h-[20px]',
+								!!stat.tooltip && 'cursor-help',
+							]}
+						>
+							<span>{stat.label}</span>
+							{stat.tooltip && (
+								<div
+									tabindex='0'
+									role='button'
+									aria-label={`Information: ${stat.tooltip}`}
+								>
+									<Icon class='size-5' name='carbon:information-filled' />
+									<div class='tooltip-content normal-case'>{stat.tooltip}</div>
+								</div>
+							)}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>

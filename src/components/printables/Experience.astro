@@ -1,0 +1,36 @@
+---
+import experience from '@/data/experience.json'
+---
+
+<div class="grid gap-2 mt-4">
+  <h2 class="text-lg font-semibold text-blue-950 border-b border-blue-950">
+    Experience
+  </h2>
+  <article class="grid gap-2 break-inside-avoid">
+    {
+      experience.map((job) => (
+        <div class="break-inside-avoid">
+          <div class="flex gap-2 items-center">
+            <div class="flex items-center gap-1">
+              <h3 class="text-sm font-semibold text-gray-800">{job.title}</h3>
+              <h3 class="text-gray-800 text-xs">@{job.company}</h3>
+            </div>
+            <div class="text-gray-600 text-xs ml-auto text-end">
+              <p>{job.date}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-1" set:html={job.description} />
+
+          <div class="flex gap-2 mt-1">
+            <p class="text-xs text-blue-950 font-semibold">Skills:</p>
+            {
+              <div class="flex items-center gap-2">
+                <p class="text-xs text-gray-600">{job.skills.join(', ')}</p>
+              </div>
+            }
+          </div>
+        </div>
+      ))
+    }
+  </article>
+</div>

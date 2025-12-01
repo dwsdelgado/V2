@@ -1,0 +1,165 @@
+---
+import { Icon } from 'astro-icon/components'
+import me from '@/data/me.json'
+---
+
+<footer
+	class='mt-16 border-t border-stone-200 dark:border-stone-800'
+	id='footer'
+>
+	<div class='max-w-6xl mx-auto px-6 lg:px-8'>
+		<div class='py-16 lg:py-20'>
+			<div
+				class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8'
+			>
+				<div>
+					<h4
+						class='text-sm font-semibold text-stone-900 dark:text-stone-100 mb-6 uppercase tracking-wide'
+					>
+						Actualmente Aprendiendo
+					</h4>
+					<ul class='space-y-3'>
+						{
+							me.currentlyLearning.map((tech) => (
+								<li class='flex items-center gap-2'>
+									<div class='w-1.5 h-1.5 bg-stone-600 dark:bg-stone-400 rounded-full' />
+									<span class='text-sm text-stone-600 dark:text-stone-400'>
+										{tech}
+									</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+
+				<div>
+					<h4
+						class='text-sm font-semibold text-stone-900 dark:text-stone-100 mb-6 uppercase tracking-wide'
+					>
+						Tecnologías / Preferencias
+					</h4>
+					<ul class='space-y-4'>
+						{
+							me.techPreferences.map((pref) => (
+								<li>
+									<div class='text-xs text-stone-600 dark:text-stone-400 uppercase tracking-wide mb-1'>
+										{pref.category}
+									</div>
+									<div class='text-sm text-stone-700 dark:text-stone-300 font-medium'>
+										{pref.tech}
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+
+				<div>
+					<h4
+						class='text-sm font-semibold text-stone-900 dark:text-stone-100 mb-6 uppercase tracking-wide'
+					>
+						Herramientas Diarias
+					</h4>
+					<ul class='space-y-3'>
+						{
+							me.developerTools.map((tool) => (
+								<li>
+									<a
+										href={tool.url}
+										target='_blank'
+										rel='noopener noreferrer'
+										class='text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200'
+									>
+										{tool.name}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+
+				<div>
+					<h4
+						class='text-sm font-semibold text-stone-900 dark:text-stone-100 mb-6 uppercase tracking-wide'
+					>
+						Conectemos
+					</h4>
+
+					<div class='space-y-4 mb-8'>
+						<a
+							href={`mailto:${me.email}`}
+							class='flex items-center gap-3 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 group'
+						>
+							<Icon
+								name='carbon:email'
+								class='size-4 text-stone-400 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors duration-200'
+							/>
+							<span class='text-sm'>Email</span>
+						</a>
+						<a
+							href={me.calcom}
+							target='_blank'
+							rel='noopener noreferrer'
+							class='flex items-center gap-3 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 group'
+						>
+							<Icon
+								name='carbon:calendar'
+								class='size-4 text-stone-400 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors duration-200'
+							/>
+							<span class='text-sm'>Schedule a call</span>
+						</a>
+					</div>
+
+					<div class='mt-8 p-4 bg-stone-50 dark:bg-stone-800/50 rounded-lg'>
+						<div class='flex items-center gap-2 mb-2'>
+							<div class='w-2 h-2 bg-emerald-500 rounded-full animate-pulse'>
+							</div>
+							<span
+								class='text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wide'
+								>Estado</span
+							>
+						</div>
+						<p class='text-sm text-stone-700 dark:text-stone-300 font-medium'>
+							{me.status}
+						</p>
+						<p class='text-xs text-stone-500 dark:text-stone-400 mt-1'>
+							{me.location} • <span id="time">--:--</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="py-8 border-t border-stone-100 dark:border-stone-800">
+  <div class="w-full text-center">
+    <p class="text-xs text-stone-600 dark:text-stone-400">
+      © {new Date().getFullYear()} 
+      <span class="font-semibold text-stone-700 dark:text-stone-300">Darwin Delgado</span>. 
+      Todos los derechos reservados.
+    </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script define:vars={{ timezone: me.timezone }}>
+	function updateTime() {
+		const timeElement = document.getElementById('time');
+		if (!timeElement) return;
+
+		const now = new Date();
+		const localTime = new Intl.DateTimeFormat('en-US', {
+			timeZone: timezone,
+			hour: '2-digit',
+			minute: '2-digit',
+			hour12: false,
+		}).format(now);
+
+		timeElement.textContent = localTime;
+	}
+
+	// Update time immediately and then every second
+	updateTime();
+	setInterval(updateTime, 1000);
+</script>

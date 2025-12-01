@@ -1,0 +1,72 @@
+{
+  "name": "Darwin",
+  "fullName": "Darwin Delgado Moreno",
+  "subtitle": "Ingeniero de Infraestructura/Devops",
+  "email": "dsdelgadomo@gmail.com",
+  "description": "Soy Ingeniero de Infraestructura/DevOps, especializado en administración de servidores Red Hat Linux, automatización con Ansible y Bash, despliegue de contenedores Docker, virtualización con KVM/Oracle y monitorización con Grafana, Prometheus, Zabbix y Infraestructuras cloud en Azure-AWS.",
+  "currentJob": "Ingeniero de Infraestructura",
+  "currentCompany": "<a href='https://www.bancounion.com/wps/portal/bancounion/web/inicio/' class='text-green-700 dark:text-[#66BB6A] font-semibold' target='_blank'>Banco Unión S.A.</a>",
+  "jobDescription": "Responsabilidad en la gestión de servidores Redhat Linux y Windows Server, virtualización Oracle/KVM, administración de clúster Oracle 19c sobre KVM, contenedores Docker, automatización con Ansible, monitorización y soporte de infraestructura en la nube.",
+  "github": "dsdelgadom",
+  "linkedin": "darwindelgado",
+  "website": "darwindelgado.com",
+  "firstJobDate": "2020-02-01",
+  "currentlyLearning": [
+    "AWS Cloud (Certificación en curso)",
+    "Kubernetes",
+    "Infraestructura como Código (IaC)",
+    "Avanzando en DevOps Pipelines"
+  ],
+  "techPreferences": [
+ {
+      "category": "Infraestructura y Automatización",
+      "tech": "Red Hat Linux, Bash scripts, Ansible, KVM/Oracle, Clústeres KVM/Oracle",
+      "icon": "carbon:server"
+    },
+    {
+      "category": "Cloud",
+      "tech": "Azure, AWS (en curso), Docker, Docker Compose, Kubernetes (EKS básico)",
+      "icon": "carbon:cloud"
+    },
+    {
+      "category": "Monitoreo", 
+      "tech": "Grafana, Prometheus, Zabbix",
+      "icon": "carbon:chart-line"
+    },
+    {
+      "category": "Plataformas y Servicios",
+      "tech": "NGINX, Apache HTTPD, WildFly, Node.js, MySQL, MariaDB",
+      "icon": "carbon:application"
+    }
+  ],
+  "developerTools": [
+    {
+      "name": "VSCode",
+      "url": "https://code.visualstudio.com"
+    },
+    {
+      "name": "Brave Browser",
+      "url": "https://brave.com"
+    },
+    {
+       "name": "Bash",
+      "url": "https://www.gnu.org/software/bash/"
+    },
+    {
+      "name": "Docker",
+      "url": "https://docker.com"
+    },
+    {
+      "name": "Obsidian",
+      "url": "https://obsidian.md"
+    },
+    {
+      "name": "AWS Management Console / AWS CLI",
+      "url": "https://aws.amazon.com/console/"
+    }
+  ],
+  "calcom": "https://cal.com/darwindelgado",
+  "location": "Cali, Colombia",
+  "status": "Disponible",
+  "timezone": "America/Bogota"
+}

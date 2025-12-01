@@ -1,0 +1,64 @@
+---
+import '@fontsource-variable/inter'
+import '@/styles/global.css'
+import Navbar from '@/components/ui/Navbar.astro'
+import Footer from '@/components/ui/Footer.astro'
+import Printable from '@/components/Printable.astro'
+import me from '@/data/me.json'
+import { HTMLtoText } from '@/utils'
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en' class='scroll-smooth antialiased'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='description' content={HTMLtoText(me.description)} />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='icon' type='image/webp' href='/favicon.ico' />
+		<link rel='sitemap' href='/sitemap-index.xml' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+		<meta name='robots' content='index, follow' />
+
+		<script is:inline>
+			const isDarkTheme =
+				'theme' in localStorage
+					? localStorage.theme === 'dark'
+					: window.matchMedia('(prefers-color-scheme: dark)').matches
+
+			document.documentElement.dataset.theme = isDarkTheme ? 'dark' : 'light'
+		</script>
+
+		<script>
+			function animate() {
+				const animatedElements = document.querySelectorAll('.animate')
+
+				animatedElements.forEach((element, index) => {
+					setTimeout(() => {
+						element.classList.add('show')
+					}, index * 200)
+				})
+			}
+
+			// Prevent FOUC by showing content when ready
+			document.addEventListener('DOMContentLoaded', () => {
+				document.body.classList.add('!visible')
+				animate()
+			})
+		</script>
+	</head>
+	<body class="invisible">
+		<div class='no-print '>
+			<Navbar />
+			<main class='max-w-6xl mx-auto px-6 lg:px-8 py-8'>
+				<slot />
+			</main>
+			<Footer />
+		</div>
+		<div class='print'>
+			<Printable />
+		</div>
+	</body>
+</html>

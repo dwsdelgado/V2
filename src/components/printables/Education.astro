@@ -1,0 +1,28 @@
+---
+import education from '@/data/education.json'
+---
+
+<div class="grid gap-2 mt-4">
+  <h2 class="text-lg font-semibold text-blue-950 border-b border-blue-950">
+    Education
+  </h2>
+  <div class="grid gap-1">
+    {
+      education.map((school) => (
+        <div class="break-inside-avoid">
+          <div class="flex gap-2 items-center">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-800">{school.degree}</h3>
+              <h3 class="text-gray-800 text-xs">{school.school}</h3>
+            </div>
+            <div class="text-gray-600 text-xs ml-auto text-end">
+              <p>{school.date}</p>
+              <p>{school.location}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-1" set:html={school.description} />
+        </div>
+      ))
+    }
+  </div>
+</div>

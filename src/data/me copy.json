@@ -1,0 +1,68 @@
+{
+  "name": "Darwin",
+  "fullName": "Darwin Delgado Moreno",
+  "subtitle": "Infrastructure & Cloud Engineer",
+  "email": "contact@johndoe.dev",
+  "description": "I'm a software engineer based in the United States. <br/> I love solving complex problems and am always driven to expand my knowledge.",
+  "currentJob": "Infrastructure & Cloud Engineer",
+  "currentCompany": "<a href='https://www.quantumtechlabs.com' class='text-green-700 dark:text-[#66BB6A] font-semibold' target='_blank'>@quantumtech</a>",
+  "jobDescription": "Developing scalable cloud-based solutions for Fortune 500 companies, focusing on performance optimization and security.",
+  "github": "yyx990803",
+  "linkedin": "johndoe",
+  "website": "johndoe.dev",
+  "firstJobDate": "2018-01-01",
+  "currentlyLearning": [
+    "RAG Techniques",
+    "React Three Fiber",
+    "Cloudflare RealtimeKit",
+    "AI Models Fine-Tuning"
+  ],
+  "techPreferences": [
+    {
+      "category": "Frontend",
+      "tech": "React/Vue + TypeScript"
+    },
+    {
+      "category": "Backend",
+      "tech": "Node.js/Java Spring"
+    },
+    {
+      "category": "Database",
+      "tech": "PostgreSQL"
+    },
+    {
+      "category": "Cloud",
+      "tech": "Cloudflare/AWS"
+    }
+  ],
+  "developerTools": [
+    {
+      "name": "Cursor",
+      "url": "https://cursor.com"
+    },
+    {
+      "name": "Brave Browser",
+      "url": "https://brave.com"
+    },
+    {
+      "name": "Postman",
+      "url": "https://postman.com"
+    },
+    {
+      "name": "Fish shell",
+      "url": "https://fishshell.com"
+    },
+    {
+      "name": "Obsidian",
+      "url": "https://obsidian.md"
+    },
+    {
+      "name": "Raycast",
+      "url": "https://raycast.com"
+    }
+  ],
+  "calcom": "https://cal.com/johndoe",
+  "location": "New York, USA",
+  "status": "Available",
+  "timezone": "America/New_York"
+}

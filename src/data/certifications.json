@@ -1,0 +1,20 @@
+[
+  {
+    "name": "ICSI | CNSS Certified Network Security Specialist",
+    "issuer": "DefensityOne",
+    "date": "Jun 2020",
+    "credentialUrl": ""
+  },
+  {
+    "name": "Cisco Certified Network Associate (CCNA)",
+    "issuer": "Cisco",
+    "date": "2021",
+    "credentialUrl": ""
+  },
+  {
+    "name": "Cisco Certified Network Professional (CCNP)",
+    "issuer": "Cisco",
+    "date": "2022",
+    "credentialUrl": ""
+  }
+]

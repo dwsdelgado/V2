@@ -1,0 +1,153 @@
+[
+     {
+    "title": "Migración Zabbix 4 a Zabbix 7.0",
+    "url": "",
+    "logoUrl": "/src/assets/zabbix-logo.webp",
+    "date": "2024-2025",
+    "description": "Migración de Zabbix de la versión 4 a 7.0 TLS, incluyendo separación de servicios en dos servidores: Zabbix App Server y Zabbix DB Server, Actualizando estos tambien de Red Hat Linux versión 7 a 9.4.",
+    "skills": [
+      "Red Hat Linux",
+      "Zabbix",
+      "NGINX",
+      "SSL",
+      "Cluster",
+      "Monitorización"
+    ],
+        "demoImage": "/src/assets/zabbix-logo.webp",
+        "demoVideo": "",
+        "demoIframe": "",
+        "demoDescription": "",
+        "iosUrl": "",
+        "androidUrl": ""
+    },
+{
+  "title": "OLKVM/Ovirt Virtualization",
+  "url": "",
+  "logoUrl": "/src/assets/kvm.webp",
+  "date":  "2023-2024",
+  "description": "Migración de base de datos Oracle 11g a 19c. Implementación de KVM/Ovirt para virtualización, creación de VMs de 20 TB desde LUNs, configuración de IPs privadas, monitorización, backups y alta disponibilidad mediante clúster Oracle KVM con réplica DRP.",
+  "skills": [
+    "Oracle 19c",
+    "KVM",
+    "Ovirt",
+    "Oracle Linux",
+    "Alta Disponibilidad",
+    "DRP",
+    "LUNs"
+  ],
+  "demoImage": "/src/assets/kvm.webp",
+  "demoVideo": "",
+  "demoIframe": "",
+  "demoDescription": "",
+  "iosUrl": "",
+  "androidUrl": ""
+}
+,
+   {
+    "title": "Implementación de FreeIPA",
+    "url": "",
+    "logoUrl": "/src/assets/freeipa.webp",
+    "date":  "2022-2023",
+    "description": "Implementación de FreeIPA para la administración centralizada de usuarios y servidores Red Hat Linux / Oracle Linux, gestionando accesos y políticas de seguridad de manera uniforme.",
+    "skills": [
+      "Red Hat Linux",
+      "Oracle Linux",
+      "FreeIPA",
+      "Gestión de usuarios",
+      "Seguridad"
+    ],
+    "demoImage": "/src/assets/freeipa.webp",
+    "demoVideo": "",
+    "demoIframe": "",
+    "demoDescription": "",
+    "iosUrl": "",
+    "androidUrl": ""
+  },
+    {
+    "title": "Automatización con Ansible",
+    "url": "",
+    "logoUrl": "/src/assets/ansible.webp",
+    "date": "2023-2024",
+    "description": "Implementación de Ansible para despliegues, actualizaciones, parches y gestión de configuraciones en servidores Linux, optimizando procesos y reduciendo errores manuales.",
+    "skills": [
+      "Red Hat Linux",
+      "Ansible",
+      "Automatización",
+      "DevOps",
+      "Gestión de Configuración"
+    ],
+    "demoImage": "/src/assets/ansible.webp",
+    "demoVideo": "",
+    "demoIframe": "",
+    "demoDescription": "",
+    "iosUrl": "",
+    "androidUrl": ""
+  },
+
+  {
+    "title": "Modernización de infraestructura",
+    "url": "",
+    "logoUrl": "/src/assets/redhat.webp",
+    "date": "2023-2024",
+    "description": "Actualización de más de 150 servidores obsoletos (SUSE, OpenSUSE, Red Hat 7, CentOS 7) a Red Hat 9, modernizando la infraestructura y asegurando soporte, seguridad y estabilidad de los sistemas.",
+    "skills": [
+      "Red Hat Linux",
+      "Migración de Servidores",
+      "Modernización de Infraestructura",
+      "Automatización",
+      "Virtualización"
+    ],
+    "demoImage": "/src/assets/redhat.webp",
+    "demoVideo": "",
+    "demoIframe": "",
+    "demoDescription": "",
+    "iosUrl": "",
+    "androidUrl": ""
+  },
+
+    {
+    "title": "Migración a Docker/Docker Compose",
+    "url": "",
+    "logoUrl": "/src/assets/docker.webp",
+    "date": "2024-2025",
+    "description": "Migración de servicios obsoletos en VM Red Hat 7 a contenedores Docker sobre Red Hat Linux 9.6, utilizando Rocky Linux para compatibilidad con librerías legacy.",
+    "skills": [
+      "Docker",
+      "Docker Compose",
+      "Red Hat Linux 9.6",
+      "Rocky Linux",
+      "Migración de Servicios"
+    ],
+    "demoImage": "/src/assets/docker.webp",
+    "demoVideo": "",
+    "demoIframe": "",
+    "demoDescription": "",
+    "iosUrl": "",
+    "androidUrl": ""
+  },
+
+  {
+  "title": "Grafana, Prometheus y Loki - Docker",
+  "url": "",
+  "logoUrl": "/src/assets/oservabilidad.webp",
+  "date": "2023-2024",
+  "description": "Implementación de una plataforma completa de observabilidad utilizando Grafana, Prometheus y Loki para el monitoreo de servidores, bases de datos, endpoints y sitios web. Configuración de dashboards personalizados, alertas, exporters, recolección de logs y visualización centralizada del estado de la infraestructura.",
+  "skills": [
+    "Grafana",
+    "Prometheus",
+    "Loki",
+    "Alertmanager",
+    "Red Hat Linux",
+    "Observabilidad",
+    "Monitorización",
+    "Exporters"
+  ],
+  "demoImage": "/src/assets/oservabilidad.webp",
+  "demoVideo": "",
+  "demoIframe": "",
+  "demoDescription": "",
+  "iosUrl": "",
+  "androidUrl": ""
+}
+]
+

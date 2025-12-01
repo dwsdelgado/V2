@@ -1,0 +1,27 @@
+---
+import certifications from '@/data/certifications.json'
+---
+
+<div class="grid gap-2 mt-6">
+  <h2 class="text-lg font-semibold text-blue-950 border-b border-blue-950 mb-3">
+    Certifications
+  </h2>
+  
+  <div class="grid gap-2">
+    {
+      certifications.map((cert) => (
+        <div class="break-inside-avoid">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-800">{cert.name}</h3>
+              <p class="text-gray-600 text-xs">{cert.issuer}</p>
+            </div>
+            <div class="text-gray-600 text-xs text-right">
+              <p>{cert.date}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,26 @@
+---
+import me from '@/data/me.json'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="grid place-content-center text-center">
+  <h1 class="text-3xl font-bold uppercase text-blue-950">{me.fullName}</h1>
+  <div class="flex gap-3 mt-2">
+    <div class="flex items-center gap-2">
+      <Icon name="carbon:email" class="size-4 text-gray-500" />
+      <p class="text-xs text-gray-500">{me.email}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="carbon:logo-github" class="size-4 text-gray-500" />
+      <p class="text-xs text-gray-500">{me.github}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="carbon:logo-linkedin" class="size-4 text-gray-500" />
+      <p class="text-xs text-gray-500">{me.linkedin}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="carbon:attachment" class="size-4 text-gray-500" />
+      <p class="text-xs text-gray-500">{me.website}</p>
+    </div>
+  </div>
+</div>

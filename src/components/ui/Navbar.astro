@@ -1,0 +1,125 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import ThemeButton from './ThemeButton.astro'
+import links from '@/data/links.json'
+import me from '@/data/me.json'
+import profilePicture from '@/assets/profile-picture.webp'
+
+const anchors = [
+  {
+    name: 'Sobre Mí',
+    id: 'about-me',
+  },
+  {
+    name: 'Proyectos', 
+    id: 'projects',
+  },
+  {
+    name: 'Experiencia',
+    id: 'experience',
+  },
+  {
+    name: 'Certificaciones',  // ✅ Nombre que se muestra
+    id: 'education',          // ✅ ID al que apunta (tu sección de educación)
+  },
+]
+
+---
+
+<navbar
+  class:list={["sticky top-0 z-10 border-b border-stone-100 dark:border-stone-800 animate", Astro.props.class]}
+>
+  <div
+    class='h-16 flex items-center justify-between px-6 lg:px-8 max-w-6xl mx-auto backdrop-blur-xl backdrop-saturate-150 bg-stone-100/60 dark:bg-stone-900/60'
+  >
+    <span
+      id="name-on-navbar"
+      data-show="false"
+      class='flex gap-3 items-center transition-opacity duration-300 data-[show="false"]:opacity-0 data-[show="false"]:invisible'
+    >
+      <Image
+        src={profilePicture}
+        alt={me.fullName}
+        height={40}
+        width={40}
+        class="rounded-full size-10 hidden sm:block shadow-xs"
+        loading="eager"
+      />
+
+      <div>
+        <h1 class="text-sm font-medium text-stone-900 dark:text-stone-100" set:text={me.fullName} />
+        <p class="hidden sm:block text-xs text-stone-500 dark:text-stone-400 tracking-wide">
+          {me.subtitle}
+        </p>
+      </div>
+    </span>
+
+    <div class="flex items-center gap-6">
+      <nav class="hidden lg:flex items-center gap-8">
+        {
+          anchors.map((anchor) => (
+            <a
+              id={`anchor-${anchor.id}`}
+              href={`#${anchor.id}`}
+              class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200"
+            >
+              {anchor.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-4">
+        {
+          links.map((link) => (
+            <a 
+              href={link.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200"
+            >
+              <Icon name={link.icon} class="size-5" title={link.name} />
+            </a>
+          ))
+        }
+        
+        <button 
+          class="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200" 
+          id="print-resume"
+          title="Download Resume"
+        >
+          <Icon name="carbon:document-pdf" class="size-5" />
+        </button>
+
+        <div class="w-px h-5 bg-stone-200 dark:bg-stone-700"></div>
+        
+        <ThemeButton />
+      </div>
+    </div>
+  </div>
+</navbar>
+
+<script>
+  const aboutMeSection = document.getElementById('about-me')!
+  const navbar = document.querySelector('navbar')!
+  const nameOnNavbar = document.getElementById('name-on-navbar')!
+
+  // Show name on navbar when the user scrolls past the about me section
+  const shouldShowNameOnNavbar = () => {
+    nameOnNavbar.dataset.show = String(
+      window.scrollY + navbar.clientHeight >
+        aboutMeSection.offsetTop + aboutMeSection.offsetHeight,
+    )
+  }
+
+  shouldShowNameOnNavbar()
+
+  window.addEventListener('scroll', () => {
+    shouldShowNameOnNavbar()
+  })
+
+  document.getElementById('print-resume')!.addEventListener('click', () => {
+    window.print()
+  })
+</script>

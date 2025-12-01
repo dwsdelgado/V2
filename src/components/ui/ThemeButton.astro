@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<button 
+  id="theme-switcher" 
+  class="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200"
+  title="Toggle theme"
+>
+  <Icon
+    name="carbon:sun"
+    id="light-theme"
+    class="hidden dark:block size-5"
+  />
+  <Icon
+    name="carbon:moon"
+    id="dark-theme"
+    class="dark:hidden size-5"
+  />
+</button>
+
+<script>
+  document.getElementById('theme-switcher')!.addEventListener('click', () => {
+    const currentTheme =
+      localStorage.theme || document.documentElement.dataset.theme
+
+    if (currentTheme === 'dark') {
+      localStorage.theme = 'light'
+      document.documentElement.dataset.theme = 'light'
+    } else {
+      localStorage.theme = 'dark'
+      document.documentElement.dataset.theme = 'dark'
+    }
+  })
+</script>

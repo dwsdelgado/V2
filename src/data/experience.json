@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Infrastructure Engineer",
+    "company": "Banco Unión",
+    "companyUrl": "",
+    "date": "Abril 2023 – Actualidad",
+    "location": "Remoto · Colombia",
+    "description": "Responsable de la administración, operación y modernización de la infraestructura tecnológica del banco. Gestión de servidores Red Hat Enterprise Linux (RHEL), Azure, automatización de procesos con Ansible y despliegue de servicios críticos. Administración de infraestructura virtualizada, almacenamiento NAS, hypervisores, redes y plataformas empresariales. Implementación de hardening, monitoreo, actualización de sistemas y soporte de entornos productivos de alta disponibilidad.",
+    "skills": [
+      "Red Hat Enterprise Linux",
+      "Linux System Administration",
+      "VMware",
+      "NAS Storage",
+      "Networking",
+      "Ansible",
+      "Automatización",
+      "Infraestructura",
+      "Seguridad"
+    ],
+    "logoUrl": "/src/assets/bancounion.png"
+  },
+  {
+  "title": "Ingeniero de Operaciones de Infraestructura",
+  "company": "GNP - Grupo Nacional de Proyectos",
+  "companyUrl": "",
+  "date": "Feb 2021 - Apr 2023",
+  "location": "Cali, Colombia",
+  "description": "Gestión integral de infraestructura on-premise en sedes de Cali y Bogotá. Administración de servidores Linux, almacenamiento NAS, virtualización con Proxmox, redes corporativas y firewalls PfSense en HA. Despliegue de servicios con Docker/Docker Compose, operación de controladoras inalámbricas UniFi, gestión de VPNs, VLANs y proxy Squid. Experiencia con Cisco Switches (CCNA, CCNP) y Aruba.",
+  "skills": [
+    "Linux Administration",
+    "Windows Server",
+    "Proxmox",
+    "NAS Storage",
+    "PfSense",
+    "Docker",
+    "Networking",
+    "Cisco",
+    "UniFi",
+    "GLPI",
+    "VPN",
+    "Firewall HA",
+    "Squid",
+    "Virtualización"
+  ],
+  "logoUrl": "/src/assets/GNP.png"
+},
+  {
+  "title": "Analista de Operaciones de TI",
+  "company": "ECOM SAS",
+  "companyUrl": "",
+  "date": "Sep 2019 - Feb 2021",
+  "location": "Cali, Valle del Cauca, Colombia",
+  "description": "Administración de servidores Windows y Linux, virtualización con VMware ESXi, controladores de dominio, DNS, DHCP, backups y bases de datos. Gestión de seguridad perimetral con Sophos UTM, monitoreo con Zabbix, configuración de VPNs site-to-site, firewalls y redes. Configuración y mantenimiento de equipos de red, telefonía IP y dispositivos de infraestructura.",
+  "skills": [
+    "Windows Server",
+    "Linux",
+    "VMware ESXi",
+    "Zabbix",
+    "Sophos UTM",
+    "VPN",
+    "Firewalls",
+    "Redes",
+    "Telefonía IP",
+    "Backups"
+  ],
+  "logoUrl": "/src/assets/logo-ecom.webp"
+}
+
+]

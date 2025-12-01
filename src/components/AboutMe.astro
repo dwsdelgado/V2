@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets'
+import me from '@/data/me.json'
+import profilePicture from '@/assets/profile-picture.webp'
+import { TypewriterEffect } from '@/components/ui/typewriter-effect'
+import QuickStats from '@/components/ui/QuickStats.astro'
+
+const words = me.fullName
+	.split(' ')
+	.map((word) => ({
+		text: word
+	}))
+---
+
+<section class='py-10 animate' id='about-me'>
+	<div class='grid lg:grid-cols-12 gap-12 lg:gap-16 items-center'>
+		<div class='lg:col-span-5 flex justify-center lg:justify-start'>
+			<Image
+				src={profilePicture}
+				alt={me.fullName}
+				class='rounded-full shadow-2xl object-cover'
+				loading='eager'
+				width={320}
+				height={320}
+				fetchpriority='high'
+			/>
+		</div>
+
+		<div class='lg:col-span-7 space-y-8'>
+			<div>
+				<div>
+					<p
+  class='text-stone-600 dark:text-stone-400 text-sm font-medium tracking-wide'
+>
+  Hola, soy
+</p>
+
+
+					<div class='min-h-16 max-h-16 pt-2'>
+						<TypewriterEffect client:idle words={words} />
+					</div>
+				</div>
+
+				<p
+					set:html={me.description}
+					class='text-lg text-stone-600 dark:text-stone-400 leading-relaxed max-w-2xl'
+				/>
+			</div>
+
+			<div class='card p-8 space-y-2'>
+				<p
+					class='text-stone-500 dark:text-stone-400 text-sm font-medium tracking-wide'
+				>
+					Actualmente
+				</p>
+
+				<div class='flex gap-2 items-center'>
+					<h2
+						class='text-2xl font-medium text-stone-900 dark:text-stone-100'
+						set:html={me.currentJob}
+					/>
+					<span set:html={me.currentCompany}/>
+				</div>
+
+				<p
+					class='text-stone-600 dark:text-stone-400 leading-relaxed'
+					set:html={me.jobDescription}
+				/>
+			</div>
+		</div>
+
+	</div>
+  <QuickStats />
+</section>

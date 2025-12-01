@@ -1,0 +1,26 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import me from '@/data/me.json'
+import AboutMe from '@/components/AboutMe.astro'
+import PrintInformation from '@/components/ui/PrintInformation.astro'
+import Projects from '@/components/Projects.astro'
+import Experience from '@/components/Experience.astro'
+import Education from '@/components/Education.astro'
+import { TracingBeam } from '@/components/ui/tracing-beam'
+
+const title = `${me.fullName} - Portfolio`
+---
+
+<Layout title={title}>
+	<AboutMe />
+	
+	<PrintInformation class='animate mb-8' />
+
+	<div class="mt-20 animate">
+		<TracingBeam client:idle>
+			<Projects />
+			<Experience />
+			<Education />
+		</TracingBeam>
+	</div>
+</Layout>

@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets'
+import jobExperience from '@/data/experience.json'
+import Skills from './ui/Skills.astro'
+import { getImageFromAssets } from '@/utils'
+
+const { condensed = false } = Astro.props
+
+const items = condensed ? jobExperience.slice(0, 3) : jobExperience
+---
+
+<section class:list={['pb-20 scroll-m-32', Astro.props.class]} id='experience'>
+	<div class='space-y-12'>
+		<div class='text-center space-y-4'>
+			<h2 class='section-title'>Experiencia</h2>
+			<p class='text-stone-600 dark:text-stone-400 text-lg max-w-3xl mx-auto'>
+				My professional journey building impactful software solutions.
+			</p>
+		</div>
+
+		<div class='space-y-6'>
+			{
+				items.map((job) => (
+					<div class='card p-8 group hover:shadow-lg'>
+						<div class='flex items-start gap-6'>
+							{job.logoUrl && (
+								<div class='shrink-0 hidden md:block'>
+									<Image
+										src={getImageFromAssets(job.logoUrl)}
+										alt={`Logo - ${job.company}`}
+										class='rounded-xl shadow-xs'
+										width={56}
+										height={56}
+										loading='lazy'
+									/>
+								</div>
+							)}
+
+							<div class='flex-1 space-y-4'>
+								<div class='space-y-2'>
+									<h3
+										class='text-xl font-medium text-stone-900 dark:text-stone-100'
+										set:html={job.title}
+									/>
+
+									<div class='flex items-center gap-3 text-stone-600 dark:text-stone-400 text-sm flex-wrap'>
+										<p class='font-medium' set:html={job.company} />
+										<div class='w-1 h-1 bg-stone-400 rounded-full' />
+										<p set:html={job.location} />
+										<div class='w-1 h-1 bg-stone-400 rounded-full' />
+										<p set:html={job.date} />
+									</div>
+								</div>
+
+								<p
+									class='text-stone-600 dark:text-stone-400 leading-relaxed'
+									set:html={job.description}
+								/>
+
+								<Skills list={job.skills || []} />
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

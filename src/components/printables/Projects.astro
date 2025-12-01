@@ -1,0 +1,42 @@
+---
+import projects from '@/data/projects.json'
+---
+
+<div class="grid gap-2 mt-4">
+  <h2 class="text-lg font-semibold text-blue-950 border-b border-blue-950">
+    Projects
+  </h2>
+  <div class="grid gap-2">
+    {
+      projects.map((project) => (
+        <div class="break-inside-avoid">
+          <div class="flex gap-2 items-center">
+            <div class="flex gap-2">
+              <h3 class="font-semibold text-sm">{project.title}</h3>
+              {project.url && (
+                <p class="text-xs text-gray-600 mt-1"> - {project.url}</p>
+              )}
+            </div>
+            {project.date && (
+              <div class="text-gray-600 text-xs ml-auto text-end">
+                <p>{project.date}</p>
+              </div>
+            )}
+          </div>
+          <p
+            class="text-gray-600 text-xs mt-1"
+            set:html={project.description}
+          />
+          <div class="flex gap-2 mt-1">
+            <p class="text-xs text-blue-950 font-semibold">Skills:</p>
+            {
+              <div class="flex items-center gap-2">
+                <p class="text-xs text-gray-600">{project.skills.join(', ')}</p>
+              </div>
+            }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

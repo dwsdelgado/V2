@@ -1,0 +1,48 @@
+---
+const { androidUrl, iosUrl } = Astro.props
+import { Image } from 'astro:assets'
+import appStore from '@/assets/appstore.svg'
+import googlePlay from '@/assets/googleplay.webp'
+---
+
+<div class="flex gap-3 items-center">
+  {
+    iosUrl && (
+      <a
+        href={iosUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block hover:scale-105 transition-transform duration-200"
+      >
+        <Image
+          class="h-[50px] w-[160px] object-contain rounded-lg transition-shadow duration-200"
+          height={50}
+          width={160}
+          src={appStore}
+          alt="Download on the App Store"
+          loading="lazy"
+        />
+      </a>
+    )
+  }
+
+  {
+    androidUrl && (
+      <a
+        href={androidUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block hover:scale-105 transition-transform duration-200"
+      >
+        <Image
+          class="h-[50px] w-[180px] object-contain rounded-lg transition-shadow duration-200"
+          height={50}
+          width={180}
+          src={googlePlay}
+          alt="Get it on Google Play"
+          loading="lazy"
+        />
+      </a>
+    )
+  }
+</div>

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "LinkedIn",
+        "icon": "carbon:logo-linkedin",
+        "url": "https://www.linkedin.com/in/johndoe"
+    },
+    {
+        "name": "GitHub",
+        "icon": "carbon:logo-github",
+        "url": "https://github.com/johndoe"
+    },
+    {
+        "name": "Medium",
+        "icon": "carbon:logo-medium",
+        "url": "https://medium.com/@johndoe"
+    },
+    {
+        "name": "Download CV",
+        "icon": "carbon:logo-medium",
+        "url": "https://medium.com/@johndoe"
+    },
+    {
+        "name": "Email",
+        "icon": "carbon:email",
+        "url": "mailto:contact@johndoe.dev"
+    }
+]

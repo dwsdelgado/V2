@@ -1,0 +1,45 @@
+[
+    {
+        "school": "DefensityOne",
+        "degree": "CNSS Certified Network Security Specialist",
+        "date": "Jun 2020",
+        "location": "Certificación Internacional", 
+        "description": "Certificación en seguridad de redes y protección de infraestructuras críticas.",
+        "skills": [
+            "Network Security",
+            "Cybersecurity",
+            "Infrastructure Protection"
+        ],
+        "logoUrl": "",
+        "type": "certification"
+    },
+    {
+        "school": "Cisco",
+        "degree": "Cisco Certified Network Associate (CCNA)",
+        "date": "2021",
+        "location": "Certificación Internacional",
+        "description": "Certificación en redes Cisco, routing y switching.",
+        "skills": [
+            "Networking",
+            "Cisco",
+            "Routing",
+            "Switching"
+        ],
+        "logoUrl": "",
+        "type": "certification" 
+    },
+    {
+        "school": "Cisco",
+        "degree": "Cisco Certified Network Professional (CCNP)",
+        "date": "2022", 
+        "location": "Certificación Internacional",
+        "description": "Certificación avanzada en redes empresariales Cisco.",
+        "skills": [
+            "Advanced Networking",
+            "Enterprise Networks", 
+            "Cisco"
+        ],
+        "logoUrl": "",
+        "type": "certification"
+    }
+]

@@ -1,0 +1,23 @@
+---
+type Props = {
+	type: 'horizontal' | 'vertical' | 'dot'
+	muted?: boolean
+	class?: string
+}
+
+const { type = 'horizontal', muted } = Astro.props
+
+const HTMLTag = type === 'horizontal' ? 'hr' : 'div'
+---
+
+<HTMLTag
+	class:list={[
+		type === 'vertical' && 'border-l',
+		type === 'horizontal' && 'border-t',
+		type === 'dot' && 'size-1 rounded-full',
+		muted
+			? 'border-neutral-300 dark:border-neutral-600 bg-gray-300 dark:bg-gray-600'
+			: 'border-neutral-400 dark:border-neutral-500 bg-gray-400 dark:bg-gray-500',
+		Astro.props.class,
+	]}
+/>

@@ -1,0 +1,41 @@
+{
+  "name": "auren-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "wrangler pages dev ./dist",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.6.8",
+    "@astrojs/react": "^4.3.1",
+    "@astrojs/sitemap": "^3.5.1",
+    "@fontsource-variable/inter": "^5.2.6",
+    "@fontsource/inter": "^5.2.6",
+    "@iconify-json/carbon": "^1.2.5",
+    "@playform/compress": "^0.2.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "astro": "^5.13.7",
+    "astro-icon": "^1.1.5",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.1.13",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "packageManager": "pnpm@10.10.0+sha1.f657bc37aa5e08da2ecff3877fe3bbb4b13703ba"
+}

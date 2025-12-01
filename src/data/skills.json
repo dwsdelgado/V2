@@ -1,0 +1,53 @@
+[
+  {
+    "category": "Linux & Servidores",
+    "items": [
+      "Red Hat Enterprise Linux",
+      "Oracle Linux", 
+      "SUSE / OpenSUSE",
+      "CentOS",
+      "Hardening",
+      "Sysadmin avanzado"
+    ]
+  },
+  {
+    "category": "Virtualización y Contenedores",
+    "items": [
+      "KVM / Ovirt",
+      "Proxmox",
+      "VMware ESXi",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  {
+    "category": "Redes y Seguridad", 
+    "items": [
+      "Cisco (CCNA/CCNP Level)",
+      "Aruba",
+      "PfSense HA",
+      "VPN IPsec",
+      "VLANs",
+      "LACP",
+      "Proxy Squid"
+    ]
+  },
+  {
+    "category": "Monitorización & Observabilidad",
+    "items": [
+      "Zabbix",
+      "Grafana", 
+      "Prometheus",
+      "Loki",
+      "Alertmanager"
+    ]
+  },
+  {
+    "category": "Automatización",
+    "items": [
+      "Ansible",
+      "Bash Scripting",
+      "Infraestructura como Código"
+    ]
+  }
+]
