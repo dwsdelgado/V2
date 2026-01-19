@@ -10,21 +10,53 @@ const words = me.fullName
 	.map((word) => ({
 		text: word
 	}))
+
+// Iconos de tecnologías que orbitan
+const techIcons = [
+	{ icon: 'logos:linux-tux', name: 'Linux' },
+	{ icon: 'logos:redhat-icon', name: 'Red Hat' },
+	{ icon: 'logos:docker-icon', name: 'Docker' },
+	{ icon: 'logos:kubernetes', name: 'Kubernetes' },
+	{ icon: 'logos:aws', name: 'AWS' },
+	{ icon: 'logos:microsoft-azure', name: 'Azure' },
+	{ icon: 'logos:ansible', name: 'Ansible' },
+	{ icon: 'logos:terraform-icon', name: 'Terraform' },
+	{ icon: 'logos:git-icon', name: 'Git' },
+	{ icon: 'logos:prometheus', name: 'Prometheus' },
+]
 ---
 
 <section class='py-16 animate' id='about-me'>
 	<div class='grid lg:grid-cols-12 gap-12 lg:gap-16 items-center'>
-		<!-- Profile Picture - Left side -->
+		<!-- Profile Picture with Orbiting Icons - Left side -->
 		<div class='lg:col-span-5 flex justify-center lg:justify-start'>
 			<div class='relative'>
+				<!-- Glow effect -->
 				<div class='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full blur-2xl opacity-20 animate-pulse'></div>
+
+				<!-- Orbiting icons container -->
+				<div class='orbit-container'>
+					<div class='orbit-ring'>
+						{techIcons.map((tech, index) => (
+							<div
+								class='orbit-icon'
+								style={`--i: ${index}; --total: ${techIcons.length};`}
+								title={tech.name}
+							>
+								<iconify-icon icon={tech.icon} width="28" height="28"></iconify-icon>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<!-- Profile image -->
 				<Image
 					src={profilePicture}
 					alt={me.fullName}
-					class='relative rounded-full shadow-2xl object-cover ring-4 ring-stone-200 dark:ring-stone-700'
+					class='relative rounded-full shadow-2xl object-cover ring-4 ring-stone-200 dark:ring-stone-700 z-10'
 					loading='eager'
-					width={320}
-					height={320}
+					width={280}
+					height={280}
 					fetchpriority='high'
 				/>
 			</div>
@@ -89,3 +121,105 @@ const words = me.fullName
 		</div>
 	</div>
 </section>
+
+<style>
+	.orbit-container {
+		position: absolute;
+		inset: -40px;
+		z-index: 5;
+	}
+
+	.orbit-ring {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		animation: orbit-rotate 30s linear infinite;
+	}
+
+	.orbit-icon {
+		position: absolute;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		/* Posicionar en círculo */
+		left: 50%;
+		top: 50%;
+		transform:
+			rotate(calc(360deg / var(--total) * var(--i)))
+			translateY(-180px)
+			rotate(calc(-360deg / var(--total) * var(--i)));
+		/* Counter-rotate para mantener iconos derechos */
+		animation: orbit-counter-rotate 30s linear infinite;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.orbit-icon:hover {
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+		z-index: 20;
+	}
+
+	:global([data-theme="dark"]) .orbit-icon {
+		background: #27272a;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	}
+
+	@keyframes orbit-rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes orbit-counter-rotate {
+		from {
+			transform:
+				rotate(calc(360deg / var(--total) * var(--i)))
+				translateY(-180px)
+				rotate(calc(-360deg / var(--total) * var(--i) + 0deg));
+		}
+		to {
+			transform:
+				rotate(calc(360deg / var(--total) * var(--i)))
+				translateY(-180px)
+				rotate(calc(-360deg / var(--total) * var(--i) - 360deg));
+		}
+	}
+
+	/* Responsive - smaller orbit on mobile */
+	@media (max-width: 640px) {
+		.orbit-container {
+			inset: -30px;
+		}
+
+		.orbit-icon {
+			width: 36px;
+			height: 36px;
+			transform:
+				rotate(calc(360deg / var(--total) * var(--i)))
+				translateY(-140px)
+				rotate(calc(-360deg / var(--total) * var(--i)));
+		}
+
+		@keyframes orbit-counter-rotate {
+			from {
+				transform:
+					rotate(calc(360deg / var(--total) * var(--i)))
+					translateY(-140px)
+					rotate(calc(-360deg / var(--total) * var(--i) + 0deg));
+			}
+			to {
+				transform:
+					rotate(calc(360deg / var(--total) * var(--i)))
+					translateY(-140px)
+					rotate(calc(-360deg / var(--total) * var(--i) - 360deg));
+			}
+		}
+	}
+</style>

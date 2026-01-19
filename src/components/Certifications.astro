@@ -1,17 +1,33 @@
 ---
 import certifications from '@/data/certifications.json'
 
-// Iconos para cada certificador
-const issuerIcons: Record<string, string> = {
-  'Amazon Web Services': 'logos:aws',
-  'Cisco': 'logos:cisco',
-  'DefensityOne': 'carbon:security'
+// Iconos y colores para cada certificador
+const issuerConfig: Record<string, { icon: string; gradient: string; bgLight: string; bgDark: string }> = {
+  'Amazon Web Services': {
+    icon: 'logos:aws',
+    gradient: 'from-[#FF9900] to-[#232F3E]',
+    bgLight: 'bg-gradient-to-br from-orange-50 to-amber-50',
+    bgDark: 'dark:bg-gradient-to-br dark:from-orange-950/30 dark:to-amber-950/30'
+  },
+  'Cisco': {
+    icon: 'logos:cisco',
+    gradient: 'from-[#049fd9] to-[#005073]',
+    bgLight: 'bg-gradient-to-br from-cyan-50 to-blue-50',
+    bgDark: 'dark:bg-gradient-to-br dark:from-cyan-950/30 dark:to-blue-950/30'
+  },
+  'DefensityOne': {
+    icon: 'carbon:security',
+    gradient: 'from-red-500 to-rose-600',
+    bgLight: 'bg-gradient-to-br from-red-50 to-rose-50',
+    bgDark: 'dark:bg-gradient-to-br dark:from-red-950/30 dark:to-rose-950/30'
+  }
 }
 
-const issuerColors: Record<string, string> = {
-  'Amazon Web Services': 'from-orange-500 to-yellow-500',
-  'Cisco': 'from-blue-600 to-cyan-500',
-  'DefensityOne': 'from-red-500 to-pink-500'
+const defaultConfig = {
+  icon: 'carbon:certificate',
+  gradient: 'from-stone-500 to-stone-600',
+  bgLight: 'bg-gradient-to-br from-stone-50 to-stone-100',
+  bgDark: 'dark:bg-gradient-to-br dark:from-stone-900/50 dark:to-stone-800/50'
 }
 ---
 
@@ -25,43 +41,53 @@ const issuerColors: Record<string, string> = {
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
-      {certifications.map((cert) => (
-        <div class="card p-6 hover:scale-[1.02] transition-transform duration-300">
-          <div class="flex items-start gap-4">
-            <div class={`p-3 rounded-xl bg-gradient-to-br ${issuerColors[cert.issuer] || 'from-stone-500 to-stone-600'} shadow-lg`}>
-              <iconify-icon
-                icon={issuerIcons[cert.issuer] || 'carbon:certificate'}
-                width="32"
-                height="32"
-                class="text-white"
-              />
-            </div>
-            <div class="flex-1">
-              <h3 class="font-semibold text-stone-900 dark:text-stone-100 text-lg">
-                {cert.name}
-              </h3>
-              <p class="text-stone-600 dark:text-stone-400 mt-1">
-                {cert.issuer}
-              </p>
-              <p class="text-stone-500 dark:text-stone-500 text-sm mt-2">
-                <iconify-icon icon="carbon:calendar" width="14" height="14" class="inline mr-1" />
-                {cert.date}
-              </p>
+      {certifications.map((cert) => {
+        const config = issuerConfig[cert.issuer] || defaultConfig
+        return (
+          <div class={`cert-card group relative overflow-hidden rounded-2xl border border-stone-200 dark:border-stone-700 ${config.bgLight} ${config.bgDark} p-6 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl`}>
+            <!-- Decorative gradient corner -->
+            <div class={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${config.gradient} rounded-full opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+
+            <div class="relative flex flex-col items-center text-center space-y-4">
+              <!-- Large icon -->
+              <div class={`w-20 h-20 rounded-2xl bg-gradient-to-br ${config.gradient} shadow-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                <iconify-icon
+                  icon={config.icon}
+                  width="44"
+                  height="44"
+                  class="text-white"
+                />
+              </div>
+
+              <!-- Certification info -->
+              <div class="space-y-2">
+                <h3 class="font-bold text-stone-900 dark:text-stone-100 text-lg leading-tight">
+                  {cert.name}
+                </h3>
+                <p class="text-stone-600 dark:text-stone-400 font-medium">
+                  {cert.issuer}
+                </p>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/60 dark:bg-stone-800/60 text-stone-600 dark:text-stone-400 text-sm">
+                  <iconify-icon icon="carbon:calendar" width="14" height="14" />
+                  {cert.date}
+                </div>
+              </div>
+
               {cert.credentialUrl && (
                 <a
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-sm mt-2 hover:underline"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm font-medium hover:scale-105 transition-transform"
                 >
-                  <iconify-icon icon="carbon:launch" width="14" height="14" />
+                  <iconify-icon icon="carbon:launch" width="16" height="16" />
                   Ver credencial
                 </a>
               )}
             </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   </div>
 </section>
