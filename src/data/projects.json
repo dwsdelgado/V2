@@ -14,16 +14,16 @@
     ]
   },
   {
-    "title": "Migración Zabbix 4 → 6",
+    "title": "Zabbix con SSL y NGINX",
     "url": "",
     "logoUrl": "/src/assets/zabbix-logo.webp",
     "date": "2024-2025",
-    "description": "Actualización integral del sistema de monitoreo corporativo. Separación de componentes en servidores dedicados (App y DB), mejorando rendimiento, escalabilidad y disponibilidad del servicio.",
+    "description": "Modernización del sistema de monitoreo Zabbix 6. Implementación de NGINX como proxy inverso con certificados SSL, separación de componentes en servidores dedicados (App y DB).",
     "skills": [
-      "Zabbix",
-      "RHEL 9",
-      "MySQL",
+      "Zabbix 6",
       "NGINX",
+      "SSL/TLS",
+      "RHEL 9",
       "Alta Disponibilidad"
     ]
   },
