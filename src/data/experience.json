@@ -1,69 +1,84 @@
 [
   {
-    "title": "Infrastructure Engineer",
+    "title": "Ingeniero de Infraestructura",
     "company": "Banco Unión",
     "companyUrl": "",
     "date": "Abril 2023 – Actualidad",
     "location": "Remoto · Colombia",
-    "description": "Responsable de la administración, operación y modernización de la infraestructura tecnológica del banco. Gestión de servidores Red Hat Enterprise Linux (RHEL), Azure, automatización de procesos con Ansible y despliegue de servicios críticos. Administración de infraestructura virtualizada, almacenamiento NAS, hypervisores, redes y plataformas empresariales. Implementación de hardening, monitoreo, actualización de sistemas y soporte de entornos productivos de alta disponibilidad.",
+    "description": "Administración y modernización de infraestructura tecnológica bancaria. Gestión de servidores RHEL, automatización con Ansible, virtualización, almacenamiento NAS y plataformas de alta disponibilidad. Implementación de hardening y monitoreo de entornos productivos.",
     "skills": [
-      "Red Hat Enterprise Linux",
-      "Linux System Administration",
-      "VMware",
-      "NAS Storage",
-      "Networking",
+      "RHEL",
       "Ansible",
-      "Automatización",
-      "Infraestructura",
-      "Seguridad"
+      "KVM/Ovirt",
+      "Zabbix",
+      "Docker",
+      "Alta Disponibilidad"
     ],
     "logoUrl": "/src/assets/bancounion.png"
   },
   {
-  "title": "Ingeniero de Operaciones de Infraestructura",
-  "company": "GNP - Grupo Nacional de Proyectos",
-  "companyUrl": "",
-  "date": "Feb 2021 - Apr 2023",
-  "location": "Cali, Colombia",
-  "description": "Gestión integral de infraestructura on-premise en sedes de Cali y Bogotá. Administración de servidores Linux, almacenamiento NAS, virtualización con Proxmox, redes corporativas y firewalls PfSense en HA. Despliegue de servicios con Docker/Docker Compose, operación de controladoras inalámbricas UniFi, gestión de VPNs, VLANs y proxy Squid. Experiencia con Cisco Switches (CCNA, CCNP) y Aruba.",
-  "skills": [
-    "Linux Administration",
-    "Windows Server",
-    "Proxmox",
-    "NAS Storage",
-    "PfSense",
-    "Docker",
-    "Networking",
-    "Cisco",
-    "UniFi",
-    "GLPI",
-    "VPN",
-    "Firewall HA",
-    "Squid",
-    "Virtualización"
-  ],
-  "logoUrl": "/src/assets/GNP.png"
-},
+    "title": "Ingeniero de Infraestructura (Líder)",
+    "company": "GNP - Grupo Nacional de Proyectos",
+    "companyUrl": "",
+    "date": "2022 – Abril 2023",
+    "location": "Cali, Colombia",
+    "description": "Liderazgo de equipo técnico de 2 personas. Gestión integral de infraestructura on-premise, virtualización con Proxmox, firewalls PfSense en HA, redes corporativas y servicios containerizados.",
+    "skills": [
+      "Liderazgo",
+      "Proxmox",
+      "PfSense HA",
+      "Docker",
+      "Redes",
+      "GLPI"
+    ],
+    "logoUrl": "/src/assets/GNP.png"
+  },
   {
-  "title": "Analista de Operaciones de TI",
-  "company": "ECOM SAS",
-  "companyUrl": "",
-  "date": "Sep 2019 - Feb 2021",
-  "location": "Cali, Valle del Cauca, Colombia",
-  "description": "Administración de servidores Windows y Linux, virtualización con VMware ESXi, controladores de dominio, DNS, DHCP, backups y bases de datos. Gestión de seguridad perimetral con Sophos UTM, monitoreo con Zabbix, configuración de VPNs site-to-site, firewalls y redes. Configuración y mantenimiento de equipos de red, telefonía IP y dispositivos de infraestructura.",
-  "skills": [
-    "Windows Server",
-    "Linux",
-    "VMware ESXi",
-    "Zabbix",
-    "Sophos UTM",
-    "VPN",
-    "Firewalls",
-    "Redes",
-    "Telefonía IP",
-    "Backups"
-  ],
-  "logoUrl": "/src/assets/logo-ecom.webp"
-}
-
+    "title": "Ingeniero Senior de Servidores y NAS",
+    "company": "GNP - Grupo Nacional de Proyectos",
+    "companyUrl": "",
+    "date": "2021 – 2022",
+    "location": "Cali, Colombia",
+    "description": "Administración de servidores Linux y Windows, almacenamiento NAS, virtualización y backups. Gestión de VPNs, VLANs y proxy Squid para múltiples sedes.",
+    "skills": [
+      "Linux",
+      "Windows Server",
+      "NAS Storage",
+      "VPN",
+      "Virtualización"
+    ],
+    "logoUrl": "/src/assets/GNP.png"
+  },
+  {
+    "title": "Analista de Redes y Comunicaciones N2-3",
+    "company": "GNP - Grupo Nacional de Proyectos",
+    "companyUrl": "",
+    "date": "Febrero 2021 – 2021",
+    "location": "Cali, Colombia",
+    "description": "Administración de redes corporativas, switches Cisco y Aruba, controladoras UniFi y equipos de comunicaciones. Soporte de infraestructura de red para sedes Cali y Bogotá.",
+    "skills": [
+      "Cisco",
+      "Aruba",
+      "UniFi",
+      "Networking",
+      "Switching"
+    ],
+    "logoUrl": "/src/assets/GNP.png"
+  },
+  {
+    "title": "Analista de Operaciones de TI",
+    "company": "ECOM SAS",
+    "companyUrl": "",
+    "date": "Septiembre 2019 – Febrero 2021",
+    "location": "Cali, Colombia",
+    "description": "Administración de servidores Windows y Linux, virtualización VMware ESXi, Active Directory, DNS y DHCP. Gestión de seguridad perimetral con Sophos UTM, monitoreo con Zabbix y configuración de VPNs.",
+    "skills": [
+      "Windows Server",
+      "VMware ESXi",
+      "Active Directory",
+      "Zabbix",
+      "Sophos UTM"
+    ],
+    "logoUrl": "/src/assets/logo-ecom.webp"
+  }
 ]
