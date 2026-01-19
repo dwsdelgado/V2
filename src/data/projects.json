@@ -14,15 +14,15 @@
     ]
   },
   {
-    "title": "Zabbix con SSL y NGINX",
+    "title": "Actualización Zabbix 6 → 7.0",
     "url": "",
     "logoUrl": "/src/assets/zabbix-logo.webp",
     "date": "2024-2025",
-    "description": "Modernización del sistema de monitoreo Zabbix 6. Implementación de NGINX como proxy inverso con certificados SSL, separación de componentes en servidores dedicados (App y DB).",
+    "description": "Actualización de Zabbix 6 a 7.0 con migración del servidor de RHEL 8 a 9. Separación de base de datos MariaDB en servidor dedicado, actualización a última versión y cambio de Apache a NGINX.",
     "skills": [
-      "Zabbix 6",
+      "Zabbix 7",
       "NGINX",
-      "SSL/TLS",
+      "MariaDB",
       "RHEL 9",
       "Alta Disponibilidad"
     ]
