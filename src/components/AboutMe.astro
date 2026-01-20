@@ -11,7 +11,7 @@ const words = me.fullName
 		text: word
 	}))
 
-// Iconos de tecnologías que orbitan
+// Iconos de tecnologías
 const techIcons = [
 	{ icon: 'logos:linux-tux', name: 'Linux' },
 	{ icon: 'logos:redhat-icon', name: 'Red Hat' },
@@ -23,31 +23,18 @@ const techIcons = [
 	{ icon: 'logos:terraform-icon', name: 'Terraform' },
 	{ icon: 'logos:git-icon', name: 'Git' },
 	{ icon: 'logos:prometheus', name: 'Prometheus' },
+	{ icon: 'logos:grafana', name: 'Grafana' },
+	{ icon: 'logos:nginx', name: 'NGINX' },
 ]
 ---
 
 <section class='py-10 animate' id='about-me'>
 	<div class='grid lg:grid-cols-12 gap-12 lg:gap-16 items-center'>
-		<!-- Profile Picture with Orbiting Icons - Left side -->
-		<div class='lg:col-span-5 flex justify-center lg:justify-start'>
+		<!-- Profile Picture with Icon Carousel - Left side -->
+		<div class='lg:col-span-5 flex flex-col items-center lg:items-start gap-6'>
 			<div class='relative'>
 				<!-- Glow effect -->
 				<div class='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full blur-2xl opacity-20 animate-pulse'></div>
-
-				<!-- Orbiting icons container -->
-				<div class='orbit-container'>
-					<div class='orbit-ring'>
-						{techIcons.map((tech, index) => (
-							<div
-								class='orbit-icon'
-								style={`--i: ${index}; --total: ${techIcons.length};`}
-								title={tech.name}
-							>
-								<iconify-icon icon={tech.icon} width="28" height="28"></iconify-icon>
-							</div>
-						))}
-					</div>
-				</div>
 
 				<!-- Profile image -->
 				<Image
@@ -59,6 +46,24 @@ const techIcons = [
 					height={280}
 					fetchpriority='high'
 				/>
+			</div>
+
+			<!-- Icon Carousel -->
+			<div class='icon-carousel-container'>
+				<div class='icon-carousel'>
+					<!-- First set -->
+					{techIcons.map((tech) => (
+						<div class='icon-item' title={tech.name}>
+							<iconify-icon icon={tech.icon} width="32" height="32"></iconify-icon>
+						</div>
+					))}
+					<!-- Duplicate for seamless loop -->
+					{techIcons.map((tech) => (
+						<div class='icon-item' title={tech.name}>
+							<iconify-icon icon={tech.icon} width="32" height="32"></iconify-icon>
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 
@@ -123,103 +128,53 @@ const techIcons = [
 </section>
 
 <style>
-	.orbit-container {
-		position: absolute;
-		inset: -40px;
-		z-index: 5;
+	.icon-carousel-container {
+		width: 180px;
+		overflow: hidden;
+		mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 	}
 
-	.orbit-ring {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		animation: orbit-rotate 30s linear infinite;
+	.icon-carousel {
+		display: flex;
+		gap: 1rem;
+		animation: scroll-icons 20s linear infinite;
+		width: max-content;
 	}
 
-	.orbit-icon {
-		position: absolute;
-		width: 44px;
-		height: 44px;
+	.icon-item {
+		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background: white;
-		border-radius: 50%;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-		/* Posicionar en círculo */
-		left: 50%;
-		top: 50%;
-		transform:
-			rotate(calc(360deg / var(--total) * var(--i)))
-			translateY(-180px)
-			rotate(calc(-360deg / var(--total) * var(--i)));
-		/* Counter-rotate para mantener iconos derechos */
-		animation: orbit-counter-rotate 30s linear infinite;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
 	}
 
-	.orbit-icon:hover {
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-		z-index: 20;
+	.icon-item:hover {
+		transform: scale(1.1);
 	}
 
-	:global([data-theme="dark"]) .orbit-icon {
+	:global([data-theme="dark"]) .icon-item {
 		background: #27272a;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	}
 
-	@keyframes orbit-rotate {
-		from {
-			transform: rotate(0deg);
+	@keyframes scroll-icons {
+		0% {
+			transform: translateX(0);
 		}
-		to {
-			transform: rotate(360deg);
-		}
-	}
-
-	@keyframes orbit-counter-rotate {
-		from {
-			transform:
-				rotate(calc(360deg / var(--total) * var(--i)))
-				translateY(-180px)
-				rotate(calc(-360deg / var(--total) * var(--i) + 0deg));
-		}
-		to {
-			transform:
-				rotate(calc(360deg / var(--total) * var(--i)))
-				translateY(-180px)
-				rotate(calc(-360deg / var(--total) * var(--i) - 360deg));
+		100% {
+			transform: translateX(-50%);
 		}
 	}
 
-	/* Responsive - smaller orbit on mobile */
-	@media (max-width: 640px) {
-		.orbit-container {
-			inset: -30px;
-		}
-
-		.orbit-icon {
-			width: 36px;
-			height: 36px;
-			transform:
-				rotate(calc(360deg / var(--total) * var(--i)))
-				translateY(-140px)
-				rotate(calc(-360deg / var(--total) * var(--i)));
-		}
-
-		@keyframes orbit-counter-rotate {
-			from {
-				transform:
-					rotate(calc(360deg / var(--total) * var(--i)))
-					translateY(-140px)
-					rotate(calc(-360deg / var(--total) * var(--i) + 0deg));
-			}
-			to {
-				transform:
-					rotate(calc(360deg / var(--total) * var(--i)))
-					translateY(-140px)
-					rotate(calc(-360deg / var(--total) * var(--i) - 360deg));
-			}
-		}
+	/* Pause on hover */
+	.icon-carousel-container:hover .icon-carousel {
+		animation-play-state: paused;
 	}
 </style>
