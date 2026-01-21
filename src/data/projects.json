@@ -4,26 +4,26 @@
     "url": "",
     "logoUrl": "/src/assets/docker.webp",
     "date": "2024-2025",
-    "description": "Transformación de arquitectura tradicional a contenedores. Migración de servicios web y aplicaciones desde máquinas virtuales hacia Docker, optimizando recursos y facilitando despliegues continuos.",
+    "description": "Migración de servicios en VM Red Hat 7 a contenedores Docker sobre RHEL 9.6, utilizando Rocky Linux para compatibilidad con librerías legacy.",
     "skills": [
       "Docker",
       "Docker Compose",
       "RHEL 9",
       "Rocky Linux",
-      "Microservicios"
+      "Migración"
     ]
   },
   {
-    "title": "Actualización Zabbix 6 → 7.0",
+    "title": "Migración Zabbix 6 → 7",
     "url": "",
     "logoUrl": "/src/assets/zabbix-logo.webp",
     "date": "2024-2025",
-    "description": "Actualización de Zabbix 6 a 7.0 con migración del servidor de RHEL 8 a 9. Separación de base de datos MariaDB en servidor dedicado, actualización a última versión y cambio de Apache a NGINX.",
+    "description": "Migración del sistema de monitoreo Zabbix, separacion de servicios Zabbix Server y DB Server, Actualización de RHEL 8 a 9.6, cambio de httpd (Apache) por Nginx y optimización de performance.",
     "skills": [
-      "Zabbix 7",
+      "Zabbix",
+      "RHEL",
+      "MySQL",
       "NGINX",
-      "MariaDB",
-      "RHEL 9",
       "Alta Disponibilidad"
     ]
   },
@@ -32,7 +32,7 @@
     "url": "",
     "logoUrl": "/src/assets/oservabilidad.webp",
     "date": "2023-2024",
-    "description": "Diseño e implementación de stack de observabilidad centralizado. Monitoreo de infraestructura, aplicaciones, certificados SSL y endpoints con dashboards en tiempo real y sistema de alertas.",
+    "description": "Stack de observabilidad con Grafana, Prometheus y Loki. Monitoreo de URLs y certificados SSL con Blackbox Exporter, dashboards personalizados y alertas.",
     "skills": [
       "Grafana",
       "Prometheus",
@@ -46,7 +46,7 @@
     "url": "",
     "logoUrl": "/src/assets/redhat.webp",
     "date": "2023-2024",
-    "description": "Actualización de máquinas virtuales Red Hat Linux desde versiones 7 y 8 hacia la versión 9, garantizando continuidad operativa, cumplimiento de seguridad y soporte extendido.",
+    "description": "Actualización de +150 servidores de SUSE, CentOS 7 y RHEL 7/8 a RHEL 9, asegurando compatibilidad de aplicaciones, soporte y cumplimiento de seguridad.",
     "skills": [
       "Red Hat Linux",
       "Leapp",
@@ -60,7 +60,7 @@
     "url": "",
     "logoUrl": "/src/assets/kvm.webp",
     "date": "2023-2024",
-    "description": "Implementación de infraestructura de virtualización empresarial para bases de datos Oracle. Configuración de alta disponibilidad, storage en LUNs y réplica para recuperación ante desastres.",
+    "description": "Implementación de plataforma de virtualización KVM/Ovirt para Oracle 19c, con VMs de alto rendimiento, storage en LUNs y clúster con réplica DRP.",
     "skills": [
       "KVM",
       "Ovirt",
@@ -74,7 +74,7 @@
     "url": "",
     "logoUrl": "/src/assets/ansible.webp",
     "date": "2023-2024",
-    "description": "Desarrollo de playbooks para automatizar despliegues, aplicación de parches y gestión de configuraciones en entornos Linux, reduciendo tiempos de operación y errores manuales.",
+    "description": "Automatización de despliegues, parches de seguridad y gestión de configuraciones en +200 servidores Linux, reduciendo tiempo de operación en un 70%.",
     "skills": [
       "Ansible",
       "Playbooks",
@@ -88,7 +88,7 @@
     "url": "",
     "logoUrl": "/src/assets/freeipa.webp",
     "date": "2022-2023",
-    "description": "Implementación de solución de gestión de identidades centralizada. Administración de usuarios, políticas de acceso y autenticación unificada para servidores Linux corporativos.",
+    "description": "Gestión centralizada de identidades y accesos para servidores RHEL y Oracle Linux, con políticas de seguridad, autenticación Kerberos y LDAP.",
     "skills": [
       "FreeIPA",
       "LDAP",
@@ -102,7 +102,7 @@
     "url": "",
     "logoUrl": "/src/assets/glpi.webp",
     "date": "2021",
-    "description": "Despliegue de plataforma ITSM para gestión de activos tecnológicos. Inventario automatizado de equipos, mesa de ayuda y seguimiento de incidencias y requerimientos.",
+    "description": "Implementación de GLPI para inventario automático de equipos, gestión de tickets de soporte, control de activos y seguimiento de incidencias.",
     "skills": [
       "GLPI",
       "ITSM",
