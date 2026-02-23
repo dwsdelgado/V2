@@ -2,12 +2,12 @@
 {
   "name": "Darwin",
   "fullName": "Darwin Delgado",
-  "subtitle": "Ingeniero de Infraestructura/Devops",
+  "subtitle": "Ingeniero de Infraestructura y Cloud",
   "email": "",
-  "description": "Especialista en Infraestructura Linux (Red Hat) | DevOps | Automatización (Ansible, Bash) | Contenedores (Docker/Docker Compose) | Virtualización (KVM, Proxmox, vSphere) | Observabilidad (Grafana, Prometheus, Zabbix) | Cloud: AWS, Azure",
+  "description": "Ingeniero de Infraestructura con 5+ años de experiencia. Especialista en Red Hat Enterprise Linux, automatización con Ansible, virtualización (VMware/KVM/Proxmox) y cloud. Migración y modernización de infraestructuras críticas, contenedores (Docker/Docker Compose/Podman), observabilidad (Grafana, Prometheus, Zabbix). CCNA/CCNP.",
   "currentJob": "Ingeniero de Infraestructura",
   "currentCompany": "<a href='https://www.bancounion.com/wps/portal/bancounion/web/inicio/' class='text-green-700 dark:text-[#66BB6A] font-semibold' target='_blank'>Banco Unión S.A.</a>",
-  "jobDescription": "Responsabilidad en la gestión de servidores Redhat Linux y Windows Server, virtualización Oracle/KVM, administración de clúster Oracle 19c sobre KVM, contenedores Docker, automatización con Ansible, monitorización y soporte de infraestructura en la nube.",
+  "jobDescription": "Responsabilidad en la gestión de servidores Redhat Linux y Windows Server, virtualización Oracle/KVM, administración de clúster Oracle 19c sobre KVM, contenedores Docker, automatización con Ansible, monitorización y soporte de infraestructura en la nube Azure.",
   "github": "dwsdelgado",
   "linkedin": "dwsdelgado",
   "website": "darwindelgado.com",
@@ -66,6 +66,7 @@
       "url": "https://aws.amazon.com/console/"
     }
   ],
+  "cvUrl": "",
   "calcom": "https://cal.com/darwindelgado",
   "location": "Cali, Colombia",
   "status": "Disponible",

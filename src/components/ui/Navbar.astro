@@ -84,13 +84,15 @@ const anchors = [
           ))
         }
         
-        <button 
-          class="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200" 
-          id="print-resume"
-          title="Download Resume"
+        <a
+          href={me.cvUrl || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200"
+          title="Download CV"
         >
           <Icon name="carbon:document-pdf" class="size-5" />
-        </button>
+        </a>
 
         <div class="w-px h-5 bg-stone-200 dark:bg-stone-700"></div>
         
@@ -119,7 +121,4 @@ const anchors = [
     shouldShowNameOnNavbar()
   })
 
-  document.getElementById('print-resume')!.addEventListener('click', () => {
-    window.print()
-  })
 </script>
