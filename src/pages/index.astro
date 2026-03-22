@@ -2,22 +2,18 @@
 import Layout from '@/layouts/Layout.astro'
 import me from '@/data/me.json'
 import AboutMe from '@/components/AboutMe.astro'
-import Projects from '@/components/Projects.astro'
 import Experience from '@/components/Experience.astro'
 import Certifications from '@/components/Certifications.astro'
-import { TracingBeam } from '@/components/ui/tracing-beam'
+import Projects from '@/components/Projects.astro'
+import Footer from '@/components/Footer.astro'
 
 const title = `${me.fullName} - Portfolio`
 ---
 
 <Layout title={title}>
-	<AboutMe />
-
-	<div class="mt-4 animate">
-		<TracingBeam client:idle>
-			<Projects />
-			<Experience />
-			<Certifications />
-		</TracingBeam>
-	</div>
+  <AboutMe />
+  <Experience />
+  <Projects />
+  <Certifications />
+  <Footer />
 </Layout>

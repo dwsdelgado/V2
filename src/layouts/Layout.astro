@@ -1,8 +1,7 @@
 ---
 import '@fontsource-variable/inter'
 import '@/styles/global.css'
-import Navbar from '@/components/ui/Navbar.astro'
-import Footer from '@/components/ui/Footer.astro'
+import Sidebar from '@/components/ui/Sidebar.astro'
 import Printable from '@/components/Printable.astro'
 import ParticlesBackground from '@/components/ui/ParticlesBackground.astro'
 import me from '@/data/me.json'
@@ -23,60 +22,59 @@ const { title } = Astro.props
 		<title>{title}</title>
 		<meta name='robots' content='index, follow' />
 
-		<!-- Open Graph / Social Media -->
 		<meta property='og:type' content='website' />
 		<meta property='og:title' content={title} />
 		<meta property='og:description' content={HTMLtoText(me.description)} />
 		<meta property='og:image' content='/favicon.png' />
 		<meta property='og:locale' content='es_CO' />
 
-		<!-- Twitter -->
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:title' content={title} />
 		<meta name='twitter:description' content={HTMLtoText(me.description)} />
 
-		<!-- Additional SEO -->
 		<meta name='author' content={me.fullName} />
 		<meta name='keywords' content='DevOps, Infrastructure Engineer, Linux, Red Hat, Ansible, Docker, Kubernetes, AWS, Cloud' />
 
-		<!-- Iconify for brand logos -->
+
+		<!-- Google Fonts: Fraunces -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
+
+		<!-- Iconify -->
 		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
 		<script is:inline>
-			const isDarkTheme =
-				'theme' in localStorage
-					? localStorage.theme === 'dark'
-					: window.matchMedia('(prefers-color-scheme: dark)').matches
-
-			document.documentElement.dataset.theme = isDarkTheme ? 'dark' : 'light'
+			// Siempre dark por defecto — limpiar preferencia anterior
+			localStorage.theme = 'dark'
+			document.documentElement.dataset.theme = 'dark'
 		</script>
 
 		<script>
-			function animate() {
-				const animatedElements = document.querySelectorAll('.animate')
-
-				animatedElements.forEach((element, index) => {
-					setTimeout(() => {
-						element.classList.add('show')
-					}, index * 200)
-				})
-			}
-
-			// Prevent FOUC by showing content when ready
 			document.addEventListener('DOMContentLoaded', () => {
 				document.body.classList.add('!visible')
-				animate()
 			})
 		</script>
 	</head>
 	<body class="invisible">
-		<ParticlesBackground />
-		<div class='no-print '>
-			<Navbar />
-			<main class='max-w-6xl mx-auto px-6 lg:px-8 py-8'>
-				<slot />
-			</main>
-			<Footer />
+		<!-- Spotlight cursor (igual que brittanychiang.com) -->
+		<div id="spotlight" class="pointer-events-none fixed inset-0 z-30 transition duration-300" style="background: radial-gradient(600px circle at 50% 50%, rgba(29,78,216,0.10), transparent 80%)"></div>
+		<script is:inline>
+			document.addEventListener('mousemove', (e) => {
+				const el = document.getElementById('spotlight')
+				if (el) el.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(29,78,216,0.10), transparent 80%)`
+			})
+		</script>
+		<div class='no-print'>
+			<div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
+				<div class="lg:flex lg:justify-between lg:gap-4">
+					<Sidebar />
+					<main id="content" class="pt-24 lg:w-[52%] lg:py-24 relative">
+						<ParticlesBackground />
+						<slot />
+					</main>
+				</div>
+			</div>
 		</div>
 		<div class='print'>
 			<Printable />

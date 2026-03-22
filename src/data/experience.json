@@ -2,83 +2,56 @@
   {
     "title": "Ingeniero de Infraestructura",
     "company": "Banco Unión",
-    "companyUrl": "",
+    "companyUrl": "https://portalweb.bancounion.com",
     "date": "Abril 2023 – Actualidad",
+    "shortDate": "2023 — PRESENTE",
     "location": "Remoto · Colombia",
     "description": "Administración y modernización de infraestructura tecnológica bancaria. Gestión de servidores RHEL, automatización con Ansible, virtualización, almacenamiento NAS y plataformas de alta disponibilidad. Implementación de hardening y monitoreo de entornos productivos.",
-    "skills": [
-      "RHEL",
-      "Ansible",
-      "KVM/Ovirt",
-      "Zabbix",
-      "Docker",
-      "Alta Disponibilidad"
-    ],
+    "skills": ["RHEL", "Ansible", "KVM/Ovirt", "Zabbix", "Docker", "Alta Disponibilidad"],
     "logoUrl": "/src/assets/bancounion.png"
   },
   {
     "title": "Ingeniero de Infraestructura (Líder)",
     "company": "GNP - Grupo Nacional de Proyectos",
-    "companyUrl": "",
+    "companyUrl": "https://gnpsa.com/en/index",
     "date": "2022 – Abril 2023",
+    "shortDate": "2022 — 2023",
     "location": "Cali, Colombia",
     "description": "Liderazgo de equipo técnico de 2 personas. Gestión integral de infraestructura on-premise, virtualización con Proxmox, firewalls PfSense en HA, redes corporativas y servicios containerizados.",
-    "skills": [
-      "Liderazgo",
-      "Proxmox",
-      "PfSense HA",
-      "Docker",
-      "Redes",
-      "GLPI"
-    ],
+    "skills": ["Liderazgo", "Proxmox", "PfSense HA", "Docker", "Redes", "GLPI"],
     "logoUrl": "/src/assets/GNP.png"
   },
   {
     "title": "Ingeniero Senior de Servidores y NAS",
     "company": "GNP - Grupo Nacional de Proyectos",
-    "companyUrl": "",
+    "companyUrl": "https://gnpsa.com/en/index",
     "date": "2021 – 2022",
+    "shortDate": "2021 — 2022",
     "location": "Cali, Colombia",
     "description": "Administración de servidores Linux y Windows, almacenamiento NAS, virtualización y backups. Gestión de VPNs, VLANs y proxy Squid para múltiples sedes.",
-    "skills": [
-      "Linux",
-      "Windows Server",
-      "NAS Storage",
-      "VPN",
-      "Virtualización"
-    ],
+    "skills": ["Linux", "Windows Server", "NAS Storage", "VPN", "Virtualización"],
     "logoUrl": "/src/assets/GNP.png"
   },
   {
     "title": "Analista de Redes y Comunicaciones N2-3",
     "company": "GNP - Grupo Nacional de Proyectos",
-    "companyUrl": "",
+    "companyUrl": "https://gnpsa.com/en/index",
     "date": "Febrero 2021 – 2021",
+    "shortDate": "FEB — 2021",
     "location": "Cali, Colombia",
     "description": "Administración de redes corporativas, switches Cisco y Aruba, controladoras UniFi y equipos de comunicaciones. Soporte de infraestructura de red para sedes Cali y Bogotá.",
-    "skills": [
-      "Cisco",
-      "Aruba",
-      "UniFi",
-      "Networking",
-      "Switching"
-    ],
+    "skills": ["Cisco", "Aruba", "UniFi", "Networking", "Switching"],
     "logoUrl": "/src/assets/GNP.png"
   },
   {
     "title": "Analista de Operaciones de TI",
     "company": "ECOM SAS",
-    "companyUrl": "",
+    "companyUrl": "https://my.ecom.com.co/co/",
     "date": "Septiembre 2019 – Febrero 2021",
+    "shortDate": "2019 — 2021",
     "location": "Cali, Colombia",
     "description": "Administración de servidores Windows y Linux, virtualización VMware ESXi, Active Directory, DNS y DHCP. Gestión de seguridad perimetral con Sophos UTM, monitoreo con Zabbix y configuración de VPNs.",
-    "skills": [
-      "Windows Server",
-      "VMware ESXi",
-      "Active Directory",
-      "Zabbix",
-      "Sophos UTM"
-    ],
+    "skills": ["Windows Server", "VMware ESXi", "Active Directory", "Zabbix", "Sophos UTM"],
     "logoUrl": "/src/assets/logo-ecom.webp"
   }
 ]

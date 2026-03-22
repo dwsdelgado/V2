@@ -1,114 +1,74 @@
 [
   {
     "title": "Containerización de Servicios",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/docker.webp",
     "date": "2024-2025",
     "description": "Migración de servicios en VM Red Hat 7 a contenedores Docker sobre RHEL 9.6, utilizando Rocky Linux para compatibilidad con librerías legacy.",
-    "skills": [
-      "Docker",
-      "Docker Compose",
-      "RHEL 9",
-      "Rocky Linux",
-      "Migración"
-    ]
+    "skills": ["Docker", "Docker Compose", "RHEL 9", "Rocky Linux", "Migración"]
   },
   {
     "title": "Migración Zabbix 6 → 7",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/zabbix-logo.webp",
     "date": "2024-2025",
-    "description": "Migración del sistema de monitoreo Zabbix, separacion de servicios Zabbix Server y DB Server, Actualización de RHEL 8 a 9.6, cambio de httpd (Apache) por Nginx y optimización de performance.",
-    "skills": [
-      "Zabbix",
-      "RHEL",
-      "MySQL",
-      "NGINX",
-      "Alta Disponibilidad"
-    ]
+    "description": "Migración del sistema de monitoreo Zabbix, separación de servicios Zabbix Server y DB Server, actualización de RHEL 8 a 9.6, cambio de Apache por Nginx y optimización de performance.",
+    "skills": ["Zabbix", "RHEL", "MySQL", "NGINX", "Alta Disponibilidad"]
   },
   {
     "title": "Plataforma de Observabilidad",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/oservabilidad.webp",
     "date": "2023-2024",
     "description": "Stack de observabilidad con Grafana, Prometheus y Loki. Monitoreo de URLs y certificados SSL con Blackbox Exporter, dashboards personalizados y alertas.",
-    "skills": [
-      "Grafana",
-      "Prometheus",
-      "Loki",
-      "Blackbox Exporter",
-      "Alertmanager"
-    ]
+    "skills": ["Grafana", "Prometheus", "Loki", "Blackbox Exporter", "Alertmanager"]
   },
   {
     "title": "Migración RHEL 7/8 → RHEL 9",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/redhat.webp",
     "date": "2023-2024",
     "description": "Actualización de +150 servidores de SUSE, CentOS 7 y RHEL 7/8 a RHEL 9, asegurando compatibilidad de aplicaciones, soporte y cumplimiento de seguridad.",
-    "skills": [
-      "Red Hat Linux",
-      "Leapp",
-      "Ansible",
-      "Hardening",
-      "Migración"
-    ]
+    "skills": ["Red Hat Linux", "Leapp", "Ansible", "Hardening", "Migración"]
   },
   {
     "title": "Virtualización KVM/Ovirt",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/kvm.webp",
     "date": "2023-2024",
     "description": "Implementación de plataforma de virtualización KVM/Ovirt para Oracle 19c, con VMs de alto rendimiento, storage en LUNs y clúster con réplica DRP.",
-    "skills": [
-      "KVM",
-      "Ovirt",
-      "Oracle 19c",
-      "LUNs",
-      "DRP"
-    ]
+    "skills": ["KVM", "Ovirt", "Oracle 19c", "LUNs", "DRP"]
   },
   {
     "title": "Automatización con Ansible",
+    "company": "Banco Unión",
     "url": "",
     "logoUrl": "/src/assets/ansible.webp",
     "date": "2023-2024",
     "description": "Automatización de despliegues, parches de seguridad y gestión de configuraciones en +200 servidores Linux, reduciendo tiempo de operación en un 70%.",
-    "skills": [
-      "Ansible",
-      "Playbooks",
-      "AWX",
-      "YAML",
-      "DevOps"
-    ]
+    "skills": ["Ansible", "Playbooks", "AWX", "YAML", "DevOps"]
   },
   {
     "title": "FreeIPA Identity Manager",
+    "company": "GNP",
     "url": "",
     "logoUrl": "/src/assets/freeipa.webp",
     "date": "2022-2023",
     "description": "Gestión centralizada de identidades y accesos para servidores RHEL y Oracle Linux, con políticas de seguridad, autenticación Kerberos y LDAP.",
-    "skills": [
-      "FreeIPA",
-      "LDAP",
-      "Kerberos",
-      "SSO",
-      "RHEL"
-    ]
+    "skills": ["FreeIPA", "LDAP", "Kerberos", "SSO", "RHEL"]
   },
   {
     "title": "GLPI - Gestión de TI",
+    "company": "GNP",
     "url": "",
     "logoUrl": "/src/assets/glpi.webp",
     "date": "2021",
     "description": "Implementación de GLPI para inventario automático de equipos, gestión de tickets de soporte, control de activos y seguimiento de incidencias.",
-    "skills": [
-      "GLPI",
-      "ITSM",
-      "Inventario",
-      "Help Desk",
-      "MySQL"
-    ]
+    "skills": ["GLPI", "ITSM", "Inventario", "Help Desk", "MySQL"]
   }
 ]

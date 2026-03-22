@@ -60,7 +60,27 @@
   --font-sans:
     Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-mono: SF Mono, Monaco, Inconsolata, Roboto Mono, monospace;
+
+  --color-violet-50: #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-300: #c4b5fd;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  --color-violet-800: #5b21b6;
+  --color-violet-900: #4c1d95;
+
+  /* Brittany palette */
+  --color-navy: #0a192f;
+  --color-navy-light: #112240;
+  --color-navy-border: #233554;
+  --color-brit-text: #ccd6f6;
+  --color-brit-muted: #8892b0;
+  --color-brit-accent: #64ffda;
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
@@ -129,34 +149,42 @@
 }
 
 @utility card {
-  @apply bg-stone-50/60 dark:bg-stone-800/30;
-  @apply border border-stone-200 dark:border-stone-700;
-  @apply rounded-xl;
-  @apply shadow-xs hover:shadow-md;
-  @apply transition-shadow duration-300;
+  @apply bg-white/80 dark:bg-stone-800/40;
+  @apply border border-stone-200/80 dark:border-stone-700/60;
+  @apply rounded-2xl;
+  @apply shadow-sm hover:shadow-lg;
+  @apply transition-all duration-300;
 }
 
 @utility section-title {
-  @apply text-2xl md:text-3xl;
-  @apply font-medium;
+  font-family: var(--font-display);
+  @apply text-3xl md:text-4xl;
+  @apply font-bold;
   @apply text-stone-900 dark:text-stone-100;
   @apply tracking-tight;
-  @apply mb-8;
+  @apply mb-2;
 }
 
-@layer base {  
+@layer base {
   body {
     font-family: 'Inter Variable', system-ui, -apple-system, BlinkMacSystemFont;
-    @apply text-stone-800 dark:text-stone-200;
-    @apply bg-white dark:bg-stone-900;
-    @apply antialiased;
-    @apply leading-relaxed;
-    @apply overflow-y-scroll;
+@apply antialiased leading-relaxed overflow-y-scroll;
+    background-color: #0f172a;
+    color: #94a3b8;
+  }
+
+  [data-theme="dark"] body {
+    background-color: #0f172a;
+    color: #94a3b8;
   }
 
   a {
-    @apply text-stone-800 dark:text-stone-200;
-    @apply hover:text-stone-600 dark:hover:text-stone-400;
+    color: inherit;
+    transition: color 0.25s ease;
+  }
+
+  a:hover {
+    color: #5eead4;
   }
 
   kbd {
@@ -346,8 +374,5 @@
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

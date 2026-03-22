@@ -1,93 +1,70 @@
 ---
 import certifications from '@/data/certifications.json'
-
-// Iconos y colores para cada certificador
-const issuerConfig: Record<string, { icon: string; gradient: string; bgLight: string; bgDark: string }> = {
-  'Amazon Web Services': {
-    icon: 'logos:aws',
-    gradient: 'from-[#FF9900] to-[#232F3E]',
-    bgLight: 'bg-gradient-to-br from-orange-50 to-amber-50',
-    bgDark: 'dark:bg-gradient-to-br dark:from-orange-950/30 dark:to-amber-950/30'
-  },
-  'Cisco': {
-    icon: 'logos:cisco',
-    gradient: 'from-[#049fd9] to-[#005073]',
-    bgLight: 'bg-gradient-to-br from-cyan-50 to-blue-50',
-    bgDark: 'dark:bg-gradient-to-br dark:from-cyan-950/30 dark:to-blue-950/30'
-  },
-  'DefensityOne': {
-    icon: 'carbon:security',
-    gradient: 'from-red-500 to-rose-600',
-    bgLight: 'bg-gradient-to-br from-red-50 to-rose-50',
-    bgDark: 'dark:bg-gradient-to-br dark:from-red-950/30 dark:to-rose-950/30'
-  }
-}
-
-const defaultConfig = {
-  icon: 'carbon:certificate',
-  gradient: 'from-stone-500 to-stone-600',
-  bgLight: 'bg-gradient-to-br from-stone-50 to-stone-100',
-  bgDark: 'dark:bg-gradient-to-br dark:from-stone-900/50 dark:to-stone-800/50'
-}
 ---
 
-<section class="pb-12 scroll-m-32" id="certifications">
-  <div class="space-y-8">
-    <div class="text-center space-y-4">
-      <h2 class="section-title">Certificaciones</h2>
-      <p class="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
-        Certificaciones profesionales que validan mis conocimientos técnicos
-      </p>
-    </div>
+<section id="certifications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
 
-    <div class="grid md:grid-cols-2 gap-6">
-      {certifications.map((cert) => {
-        const config = issuerConfig[cert.issuer] || defaultConfig
-        return (
-          <div class={`cert-card group relative overflow-hidden rounded-2xl border border-stone-200 dark:border-stone-700 ${config.bgLight} ${config.bgDark} p-6 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl`}>
-            <!-- Decorative gradient corner -->
-            <div class={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${config.gradient} rounded-full opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+  <!-- Mobile sticky header -->
+  <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0" style="background-color: rgba(15,23,42,0.85)">
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #e2e8f0">Certifications</h2>
+  </div>
 
-            <div class="relative flex flex-col items-center text-center space-y-4">
-              <!-- Large icon -->
-              <div class={`w-20 h-20 rounded-2xl bg-gradient-to-br ${config.gradient} shadow-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
-                <iconify-icon
-                  icon={config.icon}
-                  width="44"
-                  height="44"
-                  class="text-white"
-                />
-              </div>
+  <ol class="cert-list">
+    {certifications.map((cert) => (
+      <li class="mb-12">
+        <div class="cert-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
 
-              <!-- Certification info -->
-              <div class="space-y-2">
-                <h3 class="font-bold text-stone-900 dark:text-stone-100 text-lg leading-tight">
-                  {cert.name}
-                </h3>
-                <p class="text-stone-600 dark:text-stone-400 font-medium">
-                  {cert.issuer}
-                </p>
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/60 dark:bg-stone-800/60 text-stone-600 dark:text-stone-400 text-sm">
-                  <iconify-icon icon="carbon:calendar" width="14" height="14" />
-                  {cert.date}
-                </div>
-              </div>
+          <!-- Hover background -->
+          <div class="cert-hover absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block"></div>
 
-              {cert.credentialUrl && (
+          <!-- Date column -->
+          <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2" style="color: #64748b">
+            {cert.date}
+          </header>
+
+          <!-- Content column -->
+          <div class="z-10 sm:col-span-6">
+            <h3 class="font-medium leading-snug" style="color: #e2e8f0; font-size: 1rem">
+              {cert.credentialUrl ? (
                 <a
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-sm font-medium hover:scale-105 transition-transform"
+                  class="cert-link inline-flex items-baseline font-medium leading-tight"
+                  style="color: #e2e8f0; font-size: 1rem"
                 >
-                  <iconify-icon icon="carbon:launch" width="16" height="16" />
-                  Ver credencial
+                  <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                  <span>
+                    {cert.name}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
+                  </span>
                 </a>
+              ) : (
+                <span>{cert.name}</span>
               )}
-            </div>
+            </h3>
+            <p class="mt-1 text-sm" style="color: #5eead4">{cert.issuer}</p>
           </div>
-        )
-      })}
-    </div>
-  </div>
+
+        </div>
+      </li>
+    ))}
+  </ol>
+
 </section>
+
+<style>
+  .cert-list:hover .cert-card {
+    opacity: 0.5;
+  }
+  .cert-list:hover .cert-card:hover {
+    opacity: 1 !important;
+  }
+  .cert-card:hover .cert-hover {
+    background-color: rgba(30, 41, 59, 0.5);
+    box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+  }
+  .cert-link:hover {
+    color: #5eead4 !important;
+  }
+</style>

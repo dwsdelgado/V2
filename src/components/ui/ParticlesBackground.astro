@@ -54,8 +54,8 @@
   function getColors() {
     const dark = isDarkMode();
     return {
-      particle: dark ? 'rgba(168, 162, 158, 0.6)' : 'rgba(120, 113, 108, 0.5)',
-      line: dark ? 'rgba(168, 162, 158, 0.15)' : 'rgba(120, 113, 108, 0.12)'
+      particle: dark ? 'rgba(168, 162, 158, 0.08)' : 'rgba(120, 113, 108, 0.08)',
+      line: dark ? 'rgba(168, 162, 158, 0.05)' : 'rgba(120, 113, 108, 0.04)'
     };
   }
 
@@ -91,7 +91,7 @@
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
-    ctx.strokeStyle = colors.line.replace('0.15', String(0.15 * opacity)).replace('0.12', String(0.12 * opacity));
+    ctx.strokeStyle = colors.line.replace('0.05', String(0.05 * opacity)).replace('0.04', String(0.04 * opacity));
     ctx.lineWidth = 1;
     ctx.stroke();
   }

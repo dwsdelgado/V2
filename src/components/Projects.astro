@@ -1,79 +1,113 @@
 ---
 import projects from '@/data/projects.json'
-import Skills from './ui/Skills.astro'
 import { Image } from 'astro:assets'
 import { getImageFromAssets } from '@/utils'
 
-const { condensed = false } = Astro.props
-const items = condensed ? projects.slice(0, 3) : projects
+const featured = projects.slice(0, 4)
 ---
 
-<section
-	class:list={['pb-12 scroll-m-32', Astro.props.class]}
-	id="projects"
->
-	<div class="space-y-8 animate">
-		<div class="text-center space-y-4">
-			<h2 class="section-title">Proyectos Destacados</h2>
-			<p class="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
-				Proyectos de infraestructura y DevOps que demuestran mi experiencia técnica
-			</p>
-		</div>
+<section id='projects' class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
 
-		<div class="grid md:grid-cols-2 gap-6">
-			{items.map((project, index) => (
-				<div class="card p-6 hover:scale-[1.02] transition-transform duration-300 group">
-					<div class="flex items-start gap-4">
-						{project.logoUrl && (
-							<div class="shrink-0">
-								<Image
-									src={getImageFromAssets(project.logoUrl)}
-									alt={`Logo - ${project.title}`}
-									class="rounded-xl shadow-md w-14 h-14 object-contain bg-white p-1"
-									width={56}
-									height={56}
-									loading={index < 2 ? 'eager' : 'lazy'}
-								/>
-							</div>
-						)}
-						<div class="flex-1 min-w-0">
-							<div class="flex items-start justify-between gap-2">
-								<h3 class="font-semibold text-stone-900 dark:text-stone-100 text-lg leading-tight">
-									{project.title}
-								</h3>
-							</div>
+  <!-- Mobile sticky header -->
+  <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0" style="background-color: rgba(15,23,42,0.85)">
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #e2e8f0">Projects</h2>
+  </div>
 
-							{project.date && (
-								<p class="text-stone-500 dark:text-stone-500 text-sm mt-1">
-									<iconify-icon icon="carbon:calendar" width="14" height="14" class="inline mr-1" />
-									{project.date}
-								</p>
-							)}
+  <ol class="proj-list">
+    {featured.map((project, index) => (
+      <li class="mb-12">
+        <div class="proj-card group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
 
-							<p class="text-stone-600 dark:text-stone-400 text-sm mt-3 leading-relaxed line-clamp-3">
-								{project.description}
-							</p>
+          <!-- Hover background -->
+          <div class="proj-hover absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block"></div>
 
-							{project.skills && project.skills.length > 0 && (
-								<div class="mt-4">
-									<div class="flex flex-wrap gap-1.5">
-										{project.skills.slice(0, 4).map((skill: string) => (
-											<span class="px-2 py-0.5 text-xs rounded-full bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300">
-												{skill}
-											</span>
-										))}
-										{project.skills.length > 4 && (
-											<span class="px-2 py-0.5 text-xs rounded-full bg-stone-200 dark:bg-stone-600 text-stone-500 dark:text-stone-400">
-												+{project.skills.length - 4}
-											</span>
-										)}
-									</div>
-								</div>
-							)}
-						</div>
-					</div>
-				</div>
-			))}
-		</div>
-	</div>
+          <!-- Thumbnail -->
+          {project.logoUrl && (
+            <div class="z-10 sm:col-span-2 sm:order-1 order-2">
+              <div class="rounded overflow-hidden" style="background: #1e293b; border: 1px solid #334155">
+                <Image
+                  src={getImageFromAssets(project.logoUrl)}
+                  alt={project.title}
+                  width={140}
+                  height={90}
+                  class="object-contain w-full"
+                  style="padding: 8px; opacity: 0.7; transition: opacity 0.25s ease"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+              </div>
+            </div>
+          )}
+
+          <!-- Content -->
+          <div class={`z-10 sm:col-span-${project.logoUrl ? '6' : '8'} sm:order-2 order-1`}>
+            <h3 class="font-medium leading-snug">
+              <a
+                href={project.url || '#'}
+                target={project.url ? '_blank' : undefined}
+                rel={project.url ? 'noopener noreferrer' : undefined}
+                class="proj-title-link inline-flex items-baseline font-medium leading-tight"
+                style="color: #e2e8f0; font-size: 1rem"
+              >
+                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                <span>
+                  {project.title}
+                  {project.url && (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
+                  )}
+                </span>
+              </a>
+            </h3>
+
+            <p class="mt-2 text-sm leading-normal" style="color: #94a3b8">{project.description}</p>
+
+            {project.skills && project.skills.length > 0 && (
+              <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                {project.skills.slice(0, 5).map((skill: string) => (
+                  <li class="mr-1.5 mt-2">
+                    <div class="flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5" style="background: rgba(45,212,191,0.10); color: #5eead4">
+                      {skill}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <!-- Ver archivo completo -->
+  <a
+    href="/archive"
+    class="archive-link inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200 group"
+    style="color: #e2e8f0"
+  >
+    Ver Archivo Completo de Proyectos
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+  </a>
+
 </section>
+
+<style>
+  .proj-list:hover .proj-card {
+    opacity: 0.5;
+  }
+  .proj-list:hover .proj-card:hover {
+    opacity: 1 !important;
+  }
+  .proj-card:hover .proj-hover {
+    background-color: rgba(30, 41, 59, 0.5);
+    box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+  }
+  .proj-card:hover img {
+    opacity: 1 !important;
+  }
+  .proj-title-link:hover {
+    color: #5eead4 !important;
+  }
+  .archive-link:hover {
+    color: #5eead4 !important;
+  }
+</style>
