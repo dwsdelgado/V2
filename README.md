@@ -1,5 +1,11 @@
 # Darwin Delgado — Portfolio V2
 
+<div align="center">
+  <img alt="Preview del portafolio" src="public/og-preview.png" width="800" />
+</div>
+
+<br />
+
 Portafolio personal construido con Astro, Tailwind CSS y desplegado en Cloudflare Pages.
 
 ## Inicio rápido
