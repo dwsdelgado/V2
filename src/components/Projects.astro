@@ -10,7 +10,7 @@ const featured = projects.slice(0, 4)
 
   <!-- Mobile sticky header -->
   <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0" style="background-color: rgba(15,23,42,0.85)">
-    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #e2e8f0">Projects</h2>
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #e2e8f0">Proyectos</h2>
   </div>
 
   <ol class="proj-list">
@@ -21,25 +21,13 @@ const featured = projects.slice(0, 4)
           <!-- Hover background -->
           <div class="proj-hover absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block"></div>
 
-          <!-- Thumbnail -->
-          {project.logoUrl && (
-            <div class="z-10 sm:col-span-2 sm:order-1 order-2">
-              <div class="rounded overflow-hidden" style="background: #1e293b; border: 1px solid #334155">
-                <Image
-                  src={getImageFromAssets(project.logoUrl)}
-                  alt={project.title}
-                  width={140}
-                  height={90}
-                  class="object-contain w-full"
-                  style="padding: 8px; opacity: 0.7; transition: opacity 0.25s ease"
-                  loading={index < 2 ? 'eager' : 'lazy'}
-                />
-              </div>
-            </div>
-          )}
+          <!-- Date column -->
+          <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 sm:order-1 order-3" style="color: #64748b">
+            {(project as any).shortDate || project.date}
+          </header>
 
           <!-- Content -->
-          <div class={`z-10 sm:col-span-${project.logoUrl ? '6' : '8'} sm:order-2 order-1`}>
+          <div class="z-10 sm:col-span-4 sm:order-2 order-1">
             <h3 class="font-medium leading-snug">
               <a
                 href={project.url || '#'}
@@ -51,6 +39,7 @@ const featured = projects.slice(0, 4)
                 <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                 <span>
                   {project.title}
+                  {project.company && <span style="color: #94a3b8"> · {project.company}</span>}
                   {project.url && (
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
                   )}
@@ -72,6 +61,23 @@ const featured = projects.slice(0, 4)
               </ul>
             )}
           </div>
+
+          <!-- Thumbnail -->
+          {project.logoUrl && (
+            <div class="z-10 sm:col-span-2 sm:order-3 order-2">
+              <div class="rounded overflow-hidden flex items-center justify-center" style="background: #1e293b; border: 1px solid #334155; height: 80px">
+                <Image
+                  src={getImageFromAssets(project.logoUrl)}
+                  alt={project.title}
+                  width={120}
+                  height={64}
+                  class="object-contain max-h-full max-w-full"
+                  style="padding: 10px; opacity: 0.85; transition: opacity 0.25s ease"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+              </div>
+            </div>
+          )}
 
         </div>
       </li>

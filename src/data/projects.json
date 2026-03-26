@@ -1,74 +1,82 @@
 [
   {
-    "title": "Containerización de Servicios",
+    "title": "KVM/Ovirt - Oracle 19c",
     "company": "Banco Unión",
-    "url": "",
-    "logoUrl": "/src/assets/docker.webp",
-    "date": "2024-2025",
-    "description": "Migración de servicios en VM Red Hat 7 a contenedores Docker sobre RHEL 9.6, utilizando Rocky Linux para compatibilidad con librerías legacy.",
-    "skills": ["Docker", "Docker Compose", "RHEL 9", "Rocky Linux", "Migración"]
-  },
-  {
-    "title": "Migración Zabbix 6 → 7",
-    "company": "Banco Unión",
-    "url": "",
-    "logoUrl": "/src/assets/zabbix-logo.webp",
-    "date": "2024-2025",
-    "description": "Migración del sistema de monitoreo Zabbix, separación de servicios Zabbix Server y DB Server, actualización de RHEL 8 a 9.6, cambio de Apache por Nginx y optimización de performance.",
-    "skills": ["Zabbix", "RHEL", "MySQL", "NGINX", "Alta Disponibilidad"]
-  },
-  {
-    "title": "Plataforma de Observabilidad",
-    "company": "Banco Unión",
-    "url": "",
-    "logoUrl": "/src/assets/oservabilidad.webp",
-    "date": "2023-2024",
-    "description": "Stack de observabilidad con Grafana, Prometheus y Loki. Monitoreo de URLs y certificados SSL con Blackbox Exporter, dashboards personalizados y alertas.",
-    "skills": ["Grafana", "Prometheus", "Loki", "Blackbox Exporter", "Alertmanager"]
-  },
-  {
-    "title": "Migración RHEL 7/8 → RHEL 9",
-    "company": "Banco Unión",
-    "url": "",
-    "logoUrl": "/src/assets/redhat.webp",
-    "date": "2023-2024",
-    "description": "Actualización de +150 servidores de SUSE, CentOS 7 y RHEL 7/8 a RHEL 9, asegurando compatibilidad de aplicaciones, soporte y cumplimiento de seguridad.",
-    "skills": ["Red Hat Linux", "Leapp", "Ansible", "Hardening", "Migración"]
-  },
-  {
-    "title": "Virtualización KVM/Ovirt",
-    "company": "Banco Unión",
-    "url": "",
+    "url": "https://www.ovirt.org/",
     "logoUrl": "/src/assets/kvm.webp",
     "date": "2023-2024",
-    "description": "Implementación de plataforma de virtualización KVM/Ovirt para Oracle 19c, con VMs de alto rendimiento, storage en LUNs y clúster con réplica DRP.",
-    "skills": ["KVM", "Ovirt", "Oracle 19c", "LUNs", "DRP"]
+    "shortDate": "2023 — 2024",
+    "description": "Diseño e implementación de plataforma de virtualización KVM/Ovirt para soportar Oracle 19c en producción. Aprovisionamiento del hipervisor, 2 VMs de alto rendimiento, almacenamiento NAS con LUNs dedicados y clúster con réplica para plan de recuperación ante desastres (DRP).",
+    "skills": ["KVM", "Ovirt", "Oracle 19c", "NAS", "LUNs", "DRP"]
   },
   {
     "title": "Automatización con Ansible",
     "company": "Banco Unión",
-    "url": "",
-    "logoUrl": "/src/assets/ansible.webp",
+    "url": "https://www.ansible.com/",
+    "logoUrl": "/src/assets/ansible-logo.svg",
     "date": "2023-2024",
-    "description": "Automatización de despliegues, parches de seguridad y gestión de configuraciones en +200 servidores Linux, reduciendo tiempo de operación en un 70%.",
-    "skills": ["Ansible", "Playbooks", "AWX", "YAML", "DevOps"]
+    "shortDate": "2023 — 2024",
+    "description": "Adopción e implementación de Ansible para la gestión automatizada de +200 servidores Linux y Windows mediante WinRM. Desarrollo de playbooks para despliegues, hardening y parches de seguridad, orquestados desde AWX con una reducción del 70% en tiempos operativos.",
+    "skills": ["Ansible", "AWX", "Playbooks", "WinRM", "Linux", "Windows"]
+  },
+  {
+    "title": "Migración RHEL 7/8 → RHEL 9",
+    "company": "Banco Unión",
+    "url": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+    "logoUrl": "/src/assets/redhat-logo.svg",
+    "date": "2023-2024",
+    "shortDate": "2023 — 2024",
+    "description": "Planificación y ejecución de la migración de +150 servidores SUSE, CentOS 7 y RHEL 7/8 a RHEL 9. Configuración de repositorios locales espejo para centralizar la distribución de paquetes, garantizando compatibilidad de aplicaciones, seguridad y continuidad operativa.",
+    "skills": ["RHEL 9", "Leapp", "Ansible", "Repositorios Locales", "Hardening", "Migración"]
+  },
+  {
+    "title": "Docker",
+    "company": "Banco Unión",
+    "url": "https://www.docker.com/",
+    "logoUrl": "/src/assets/docker-logo.jpg",
+    "date": "2024-2025",
+    "shortDate": "2024 — 2025",
+    "description": "Adopción de contenedores Docker para la modernización de aplicaciones legacy sobre RHEL 9.6. Migración progresiva de servicios desde VMs Red Hat 7 hacia arquitectura de contenedores con Docker Compose, mejorando la portabilidad y eficiencia operativa.",
+    "skills": ["Docker", "Docker Compose", "RHEL 9", "Rocky Linux", "Contenedores"]
+  },
+  {
+    "title": "Plataforma de Observabilidad",
+    "company": "Banco Unión",
+    "url": "https://grafana.com/",
+    "logoUrl": "/src/assets/grafana-logo.svg",
+    "date": "2023-2024",
+    "shortDate": "2023 — 2024",
+    "description": "Despliegue de stack de observabilidad con Grafana, Prometheus y Loki para monitoreo centralizado de infraestructura. Integración de Blackbox Exporter para supervisión de URLs y certificados SSL, con dashboards personalizados y alertas proactivas.",
+    "skills": ["Grafana", "Prometheus", "Loki", "Blackbox Exporter", "Alertmanager"]
+  },
+  {
+    "title": "Migración Zabbix 6 → 7",
+    "company": "Banco Unión",
+    "url": "https://www.zabbix.com/",
+    "logoUrl": "/src/assets/zabbix-logo-new.png",
+    "date": "2024-2025",
+    "shortDate": "2024 — 2025",
+    "description": "Actualización y reestructuración de la plataforma de monitoreo Zabbix: separación de Zabbix Server y DB Server, migración del sistema operativo a RHEL 9.6, sustitución de Apache por Nginx y optimización del rendimiento general.",
+    "skills": ["Zabbix", "RHEL", "MySQL", "NGINX", "Alta Disponibilidad"]
   },
   {
     "title": "FreeIPA Identity Manager",
     "company": "GNP",
-    "url": "",
+    "url": "https://www.freeipa.org/",
     "logoUrl": "/src/assets/freeipa.webp",
     "date": "2022-2023",
-    "description": "Gestión centralizada de identidades y accesos para servidores RHEL y Oracle Linux, con políticas de seguridad, autenticación Kerberos y LDAP.",
+    "shortDate": "2022 — 2023",
+    "description": "Despliegue de solución centralizada de gestión de identidades y control de accesos para servidores RHEL y Oracle Linux. Configuración de políticas de seguridad, autenticación mediante Kerberos y directorio LDAP corporativo.",
     "skills": ["FreeIPA", "LDAP", "Kerberos", "SSO", "RHEL"]
   },
   {
     "title": "GLPI - Gestión de TI",
     "company": "GNP",
-    "url": "",
+    "url": "https://glpi-project.org/",
     "logoUrl": "/src/assets/glpi.webp",
     "date": "2021",
-    "description": "Implementación de GLPI para inventario automático de equipos, gestión de tickets de soporte, control de activos y seguimiento de incidencias.",
+    "shortDate": "2021",
+    "description": "Despliegue de plataforma ITSM con GLPI para la gestión integral del servicio de TI: inventario automático de activos, administración de tickets de soporte, control de cambios y seguimiento de incidencias.",
     "skills": ["GLPI", "ITSM", "Inventario", "Help Desk", "MySQL"]
   }
 ]

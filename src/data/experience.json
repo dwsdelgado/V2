@@ -11,29 +11,18 @@
     "logoUrl": "/src/assets/bancounion.png"
   },
   {
-    "title": "Ingeniero de Infraestructura (Líder)",
+    "title": "Ingeniero de Infraestructura",
     "company": "GNP - Grupo Nacional de Proyectos",
     "companyUrl": "https://gnpsa.com/en/index",
-    "date": "2022 – Abril 2023",
-    "shortDate": "2022 — 2023",
+    "date": "2021 – Abril 2023",
+    "shortDate": "2021 — 2023",
     "location": "Cali, Colombia",
-    "description": "Liderazgo de equipo técnico de 2 personas. Gestión integral de infraestructura on-premise, virtualización con Proxmox, firewalls PfSense en HA, redes corporativas y servicios containerizados.",
-    "skills": ["Liderazgo", "Proxmox", "PfSense HA", "Docker", "Redes", "GLPI"],
+    "description": "Coordinador de mesa de ayuda con gestión del data center, sede principal y 2 técnicos a cargo. Administración de servidores Linux y Windows, almacenamiento NAS, virtualización con Proxmox, backups y firewalls PfSense en HA. Gestión de VPNs, VLANs, redes corporativas y servicios contenerizados.",
+    "skills": ["Linux", "Windows Server", "Proxmox", "PfSense HA", "NAS Storage", "Docker", "VPN", "GLPI"],
     "logoUrl": "/src/assets/GNP.png"
   },
   {
-    "title": "Ingeniero Senior de Servidores y NAS",
-    "company": "GNP - Grupo Nacional de Proyectos",
-    "companyUrl": "https://gnpsa.com/en/index",
-    "date": "2021 – 2022",
-    "shortDate": "2021 — 2022",
-    "location": "Cali, Colombia",
-    "description": "Administración de servidores Linux y Windows, almacenamiento NAS, virtualización y backups. Gestión de VPNs, VLANs y proxy Squid para múltiples sedes.",
-    "skills": ["Linux", "Windows Server", "NAS Storage", "VPN", "Virtualización"],
-    "logoUrl": "/src/assets/GNP.png"
-  },
-  {
-    "title": "Analista de Redes y Comunicaciones N2-3",
+    "title": "Analista de Redes y Comunicaciones",
     "company": "GNP - Grupo Nacional de Proyectos",
     "companyUrl": "https://gnpsa.com/en/index",
     "date": "Febrero 2021 – 2021",
