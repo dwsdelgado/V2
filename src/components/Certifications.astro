@@ -4,11 +4,11 @@ import { Image } from 'astro:assets'
 import { getImageFromAssets } from '@/utils'
 ---
 
-<section id="certifications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+<section id="certifications" class="mb-12 scroll-mt-16 md:mb-16 lg:mb-20 lg:scroll-mt-24">
 
   <!-- Mobile sticky header -->
-  <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0" style="background-color: rgba(15,23,42,0.85)">
-    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #e2e8f0">Certificaciones</h2>
+  <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0" style="background-color: rgba(30,30,33,0.85)">
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:sr-only" style="color: #ffffff">Certificaciones</h2>
   </div>
 
   <ol class="cert-list">
@@ -20,20 +20,20 @@ import { getImageFromAssets } from '@/utils'
           <div class="cert-hover absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block"></div>
 
           <!-- Date column -->
-          <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 sm:order-1 order-3" style="color: #64748b">
+          <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 sm:order-1 order-3" style="color: #d4d4d8">
             {cert.date}
           </header>
 
           <!-- Content column -->
           <div class={`z-10 sm:order-2 order-1 ${(cert as any).logoUrl ? 'sm:col-span-4' : 'sm:col-span-6'}`}>
-            <h3 class="font-medium leading-snug" style="color: #e2e8f0; font-size: 1rem">
+            <h3 class="font-medium leading-snug" style="color: #ffffff; font-size: 1rem">
               {cert.credentialUrl ? (
                 <a
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="cert-link inline-flex items-baseline font-medium leading-tight"
-                  style="color: #e2e8f0; font-size: 1rem"
+                  style="color: #ffffff; font-size: 1rem"
                 >
                   <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                   <span>
@@ -45,13 +45,13 @@ import { getImageFromAssets } from '@/utils'
                 <span>{cert.name}</span>
               )}
             </h3>
-            <p class="mt-1 text-sm" style="color: #5eead4">{cert.issuer}</p>
+            <p class="mt-1 text-sm" style="color: #d4a373">{cert.issuer}</p>
           </div>
 
           <!-- Logo -->
           {(cert as any).logoUrl && (
             <div class="z-10 sm:col-span-2 sm:order-3 order-2">
-              <div class="rounded overflow-hidden flex items-center justify-center" style="background: #1e293b; border: 1px solid #334155; height: 80px">
+              <div class="rounded overflow-hidden flex items-center justify-center" style="background: #27272a; border: 1px solid #3f3f46; height: 80px">
                 <Image
                   src={getImageFromAssets((cert as any).logoUrl)}
                   alt={cert.issuer}
@@ -80,10 +80,10 @@ import { getImageFromAssets } from '@/utils'
     opacity: 1 !important;
   }
   .cert-card:hover .cert-hover {
-    background-color: rgba(30, 41, 59, 0.5);
-    box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+    background-color: rgba(39, 39, 42, 0.5);
+    box-shadow: inset 0 1px 0 0 rgba(161, 161, 170, 0.1);
   }
   .cert-link:hover {
-    color: #5eead4 !important;
+    color: #d4a373 !important;
   }
 </style>

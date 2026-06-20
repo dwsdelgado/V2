@@ -1,46 +1,45 @@
 [
   {
-    "title": "Ingeniero de Infraestructura",
+    "title": "Infrastructure Engineer",
     "company": "Banco Unión",
     "companyUrl": "https://portalweb.bancounion.com",
     "date": "Abril 2023 – Actualidad",
     "shortDate": "2023 — PRESENTE",
-    "location": "Remoto · Colombia",
-    "description": "Administración y modernización de infraestructura tecnológica bancaria. Gestión de servidores RHEL, automatización con Ansible, virtualización, almacenamiento NAS y plataformas de alta disponibilidad. Implementación de hardening y monitoreo de entornos productivos.",
-    "skills": ["RHEL", "Ansible", "KVM/Ovirt", "Zabbix", "Docker", "Alta Disponibilidad"],
-    "logoUrl": "/src/assets/bancounion.png"
+    "description": "Infrastructure Engineer at a state-owned bank in Colombia. Responsible for hybrid infrastructure spanning Azure, AWS and on-premise Linux/Windows servers.",
+    "highlights": [
+      "Hybrid infrastructure management: Linux/Windows servers across Azure and on-premise.",
+      "Legacy fleet modernization: RHEL and Windows Server migrations.",
+      "Containerized applications to Docker.",
+      "Linux patching and updates automated with Ansible.",
+      "SSL/TLS certificate renewal.",
+      "On-call rotation (24/7), once a month."
+    ],
+    "skills": ["Azure", "AWS", "RHEL", "Terraform", "Ansible", "Docker"]
   },
   {
     "title": "Ingeniero de Infraestructura",
     "company": "GNP - Grupo Nacional de Proyectos",
     "companyUrl": "https://gnpsa.com/en/index",
-    "date": "2021 – Abril 2023",
+    "date": "Febrero 2021 – Abril 2023",
     "shortDate": "2021 — 2023",
-    "location": "Cali, Colombia",
-    "description": "Coordinador de mesa de ayuda con gestión del data center, sede principal y 2 técnicos a cargo. Administración de servidores Linux y Windows, almacenamiento NAS, virtualización con Proxmox, backups y firewalls PfSense en HA. Gestión de VPNs, VLANs, redes corporativas y servicios contenerizados.",
-    "skills": ["Linux", "Windows Server", "Proxmox", "PfSense HA", "NAS Storage", "Docker", "VPN", "GLPI"],
-    "logoUrl": "/src/assets/GNP.png"
+    "description": "Administración Linux con Puppet, gestión de identidades open source (FreeIPA, Samba AD), virtualización con Proxmox (LXC/VMs) y red avanzada (Cisco CCNP, Aruba, PfSense HA).",
+    "skills": ["Linux", "Puppet", "FreeIPA", "Proxmox", "Cisco CCNP", "PfSense HA"]
   },
   {
-    "title": "Analista de Redes y Comunicaciones",
-    "company": "GNP - Grupo Nacional de Proyectos",
-    "companyUrl": "https://gnpsa.com/en/index",
-    "date": "Febrero 2021 – 2021",
-    "shortDate": "FEB — 2021",
-    "location": "Cali, Colombia",
-    "description": "Administración de redes corporativas, switches Cisco y Aruba, controladoras UniFi y equipos de comunicaciones. Soporte de infraestructura de red para sedes Cali y Bogotá.",
-    "skills": ["Cisco", "Aruba", "UniFi", "Networking", "Switching"],
-    "logoUrl": "/src/assets/GNP.png"
-  },
-  {
-    "title": "Analista de Operaciones de TI",
+    "title": "Analista de Operaciones TI",
     "company": "ECOM SAS",
     "companyUrl": "https://my.ecom.com.co/co/",
-    "date": "Septiembre 2019 – Febrero 2021",
+    "date": "2019 – 2021",
     "shortDate": "2019 — 2021",
-    "location": "Cali, Colombia",
-    "description": "Administración de servidores Windows y Linux, virtualización VMware ESXi, Active Directory, DNS y DHCP. Gestión de seguridad perimetral con Sophos UTM, monitoreo con Zabbix y configuración de VPNs.",
-    "skills": ["Windows Server", "VMware ESXi", "Active Directory", "Zabbix", "Sophos UTM"],
-    "logoUrl": "/src/assets/logo-ecom.webp"
+    "description": "Administración Windows/Linux, Active Directory y DNS. Virtualización VMware vSphere/ESXi con backups en Acronis, seguridad perimetral Sophos UTM y monitoreo con Grafana/Zabbix.",
+    "skills": ["Windows Server", "VMware ESXi", "Active Directory", "Sophos UTM", "Zabbix"]
+  },
+  {
+    "title": "Instructor TI",
+    "company": "Colegio Santa Bárbara",
+    "date": "2016",
+    "shortDate": "2016",
+    "description": "Clases de fundamentos de redes (LAN, switches/routers, segmentación, ponchado de cables) e introducción a ensamblaje y soporte de hardware de PCs.",
+    "skills": ["Networking", "Hardware", "Docencia"]
   }
 ]

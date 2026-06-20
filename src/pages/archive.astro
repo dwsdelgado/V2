@@ -1,6 +1,7 @@
 ---
 import projects from '@/data/projects.json'
 import me from '@/data/me.json'
+import SiteFooter from '@/components/ui/SiteFooter.astro'
 import '@fontsource-variable/inter'
 import '@/styles/global.css'
 
@@ -21,20 +22,20 @@ const title = `Todos los Proyectos — ${me.fullName}`
     document.documentElement.dataset.theme = 'dark'
   </script>
 </head>
-<body style="background: #0f172a; color: #94a3b8; min-height: 100vh;">
-  <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 md:py-12">
+<body style="background: #1e1e21; color: #e4e4e7; min-height: 100vh;">
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-8 md:py-12 lg:pb-24">
 
     <!-- Back link -->
     <a
       href="/"
       class="back-link inline-flex items-center gap-2 text-sm font-medium mb-8 transition-colors duration-200"
-      style="color: #64748b"
+      style="color: #d4d4d8"
     >
       ← {me.fullName}
     </a>
 
     <!-- Title -->
-    <h1 class="text-5xl font-bold mb-16" style="font-family: var(--font-display); color: #e2e8f0">
+    <h1 class="text-5xl font-bold mb-16" style="font-family: var(--font-display); color: #ffffff">
       Todos los Proyectos
     </h1>
 
@@ -48,26 +49,26 @@ const title = `Todos los Proyectos — ${me.fullName}`
         <col class="hidden lg:table-column" style="width: 10%" />
       </colgroup>
       <thead>
-        <tr style="border-bottom: 1px solid #334155">
-          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase" style="color: #64748b">Año</th>
-          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase" style="color: #64748b">Proyecto</th>
-          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase hidden sm:table-cell" style="color: #64748b">Empresa</th>
-          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase hidden md:table-cell" style="color: #64748b">Construido con</th>
-          <th class="text-left pb-4 text-xs font-bold tracking-widest uppercase hidden lg:table-cell" style="color: #64748b">Link</th>
+        <tr style="border-bottom: 1px solid #3f3f46">
+          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase" style="color: #d4d4d8">Año</th>
+          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase" style="color: #d4d4d8">Proyecto</th>
+          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase hidden sm:table-cell" style="color: #d4d4d8">Empresa</th>
+          <th class="text-left pb-4 pr-4 text-xs font-bold tracking-widest uppercase hidden md:table-cell" style="color: #d4d4d8">Construido con</th>
+          <th class="text-left pb-4 text-xs font-bold tracking-widest uppercase hidden lg:table-cell" style="color: #d4d4d8">Link</th>
         </tr>
       </thead>
       <tbody>
         {projects.map((project) => {
           const year = project.date?.split('-')[0] || '—'
           return (
-            <tr class="proj-row border-b transition-colors duration-200" style="border-color: #334155">
-              <td class="py-4 pr-4 align-top font-mono text-xs" style="color: #64748b">{year}</td>
-              <td class="py-4 pr-4 align-top font-semibold text-sm" style="color: #e2e8f0">{project.title}</td>
-              <td class="py-4 pr-4 align-top text-sm hidden sm:table-cell" style="color: #64748b">{(project as any).company || '—'}</td>
+            <tr class="proj-row border-b transition-colors duration-200" style="border-color: #3f3f46">
+              <td class="py-4 pr-4 align-top font-mono text-xs" style="color: #d4d4d8">{year}</td>
+              <td class="py-4 pr-4 align-top font-semibold text-sm" style="color: #ffffff">{project.title}</td>
+              <td class="py-4 pr-4 align-top text-sm hidden sm:table-cell" style="color: #d4d4d8">{(project as any).company || '—'}</td>
               <td class="py-4 pr-4 align-top hidden md:table-cell">
                 <div class="flex flex-wrap gap-1.5">
                   {project.skills?.map((skill: string) => (
-                    <span class="px-2 py-0.5 rounded-full text-xs" style="background: #1e293b; color: #5eead4; border: 1px solid #334155">
+                    <span class="px-2 py-0.5 rounded-full text-xs" style="background: #27272a; color: #d4a373; border: 1px solid #3f3f46">
                       {skill}
                     </span>
                   ))}
@@ -75,11 +76,11 @@ const title = `Todos los Proyectos — ${me.fullName}`
               </td>
               <td class="py-4 align-top hidden lg:table-cell">
                 {project.url ? (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" class="proj-link text-xs transition-colors duration-200" style="color: #64748b">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" class="proj-link text-xs transition-colors duration-200" style="color: #d4d4d8">
                     Ver ↗
                   </a>
                 ) : (
-                  <span style="color: #64748b; opacity: 0.3">—</span>
+                  <span style="color: #d4d4d8; opacity: 0.3">—</span>
                 )}
               </td>
             </tr>
@@ -88,23 +89,24 @@ const title = `Todos los Proyectos — ${me.fullName}`
       </tbody>
     </table>
   </div>
+  <SiteFooter />
 </body>
 </html>
 
 <style>
   .back-link:hover {
-    color: #5eead4 !important;
+    color: #d4a373 !important;
   }
 
   .proj-row:hover td {
-    color: #5eead4 !important;
+    color: #d4a373 !important;
   }
 
   .proj-row:hover {
-    background: #1e293b;
+    background: #27272a;
   }
 
   .proj-link:hover {
-    color: #5eead4 !important;
+    color: #d4a373 !important;
   }
 </style>

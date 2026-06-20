@@ -43,6 +43,41 @@ Edita los archivos en `src/data/` para actualizar el contenido:
 - **`certifications.json`** — Certificaciones
 - **`links.json`** — Redes sociales
 
+## Blog
+
+Cada post es un archivo `.md` en `src/content/blog/`. No hay editor ni panel — se escribe en el editor que quieras y se sube al repo.
+
+### Cómo escribir un post nuevo
+
+1. Crea un archivo en `src/content/blog/nombre-del-post.md` (el nombre del archivo es la URL: `/blog/nombre-del-post`).
+2. Arriba va el frontmatter, abajo el contenido en Markdown:
+
+   ```markdown
+   ---
+   title: "Título del post"
+   date: 2026-06-20
+   description: "Una línea resumiendo el post."
+   category: "AWS"
+   ---
+
+   Contenido del post en Markdown normal: párrafos, `## subtítulos`,
+   listas con `-`, código con \`backticks\`, etc.
+   ```
+
+3. `category` agrupa el post en el listado de `/blog` (ej. "AWS", "Certificaciones", "Linux"). Usa la misma categoría tal cual en varios posts para que se agrupen juntos.
+
+### ¿Con copiar el .md y hacer push ya funciona?
+
+Sí. No necesitas correr `pnpm build` en tu máquina ni nada más:
+
+```bash
+git add src/content/blog/nombre-del-post.md
+git commit -m "Nuevo post: nombre del post"
+git push
+```
+
+Cloudflare Pages está conectado al repo de GitHub — cuando detecta el push a `main`, corre `pnpm build` automáticamente en su lado y despliega el resultado. El post aparece en el sitio unos minutos después del push, sin que tengas que tocar nada más.
+
 ## Despliegue en Cloudflare Pages
 
 1. Sube el proyecto a GitHub

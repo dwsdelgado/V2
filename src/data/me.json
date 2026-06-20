@@ -1,7 +1,7 @@
 
 {
   "fullName": "Darwin Delgado",
-  "subtitle": "Cloud Infrastructure Engineer",
-  "description": "Ingeniero de Infraestructura con 5+ años de experiencia. Especialista en Red Hat Enterprise Linux, automatización con Ansible, virtualización (VMware/KVM/Proxmox) y cloud. Migración y modernización de infraestructuras críticas, contenedores (Docker/Docker Compose/Podman), observabilidad (Grafana, Prometheus, Zabbix). CCNA/CCNP.",
+  "subtitle": "Ingeniero de Infraestructura · Cloud Híbrida",
+  "description": "Ingeniero de Infraestructura. Híbrido on-premise + Azure/AWS. RHEL, Ansible, Terraform, Docker. AWS Certified Cloud Practitioner.",
   "cvUrl": "/darwin_delgado_resumen_es.pdf"
 }

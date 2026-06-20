@@ -1,0 +1,45 @@
+---
+import links from '@/data/links.json'
+import { Icon } from 'astro-icon/components'
+
+const year = new Date().getFullYear()
+---
+
+<footer class="hidden lg:flex lg:fixed lg:inset-x-0 lg:bottom-0 lg:z-30 items-center justify-between px-6 md:px-12 py-3" style="background: rgba(30,30,33,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(161,161,170,0.12)">
+  <div class="mx-auto w-full max-w-screen-xl grid items-center gap-6" style="grid-template-columns: minmax(0,1fr) auto minmax(0,1fr)">
+    <ul class="flex items-center gap-4 justify-self-start min-w-0">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={link.name}
+            class="footer-icon block transition-colors duration-200"
+            style="color: #f4f4f5"
+          >
+            <Icon name={link.icon} class="size-5" />
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="text-xs justify-self-center whitespace-nowrap" style="color: #71717a">
+      © {year} <span style="color: #d4d4d8" class="font-medium">Darwin Delgado</span>
+    </p>
+
+    <p class="text-xs whitespace-nowrap overflow-hidden text-ellipsis text-right justify-self-end min-w-0 w-full" style="color: #71717a">
+      Codificado en <span style="color: #d4d4d8" class="font-medium">Visual Studio Code</span>.
+      Construido con <span style="color: #d4d4d8" class="font-medium">Astro</span> y
+      <span style="color: #d4d4d8" class="font-medium">Tailwind CSS</span>, desplegado con
+      <span style="color: #d4d4d8" class="font-medium">Cloudflare</span>. Todo el texto en la
+      tipografía <span style="color: #d4d4d8" class="font-medium">Inter</span>.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer-icon:hover {
+    color: #d4a373 !important;
+  }
+</style>

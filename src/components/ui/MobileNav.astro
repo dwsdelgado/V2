@@ -8,13 +8,13 @@ const anchors = [
 ---
 
 <nav id="mobile-nav" class="lg:hidden fixed bottom-0 left-0 right-0 z-50 px-2 pb-2">
-  <div class="rounded-2xl px-2 py-2 flex justify-around items-center" style="background: rgba(15,23,42,0.95); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,0.12); box-shadow: 0 -4px 24px rgba(0,0,0,0.4)">
+  <div class="rounded-2xl px-2 py-2 flex justify-around items-center" style="background: rgba(30,30,33,0.95); backdrop-filter: blur(12px); border: 1px solid rgba(161,161,170,0.12); box-shadow: 0 -4px 24px rgba(0,0,0,0.4)">
     {anchors.map((anchor) => (
       <a
         href={`#${anchor.id}`}
         data-section={anchor.id}
         class="mobile-nav-link flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all duration-200"
-        style="color: #64748b; min-width: 64px"
+        style="color: #d4d4d8; min-width: 64px"
       >
         <svg class="mobile-nav-icon w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
           {anchor.icon === 'person' && <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />}
@@ -31,8 +31,8 @@ const anchors = [
 <style>
   .mobile-nav-link.active,
   .mobile-nav-link:hover {
-    color: #5eead4 !important;
-    background: rgba(45,212,191,0.08) !important;
+    color: #d4a373 !important;
+    background: rgba(212,163,115,0.08) !important;
   }
 </style>
 

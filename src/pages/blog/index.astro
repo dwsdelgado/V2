@@ -1,0 +1,111 @@
+---
+export const prerender = true
+
+import { getCollection } from 'astro:content'
+import me from '@/data/me.json'
+import SiteFooter from '@/components/ui/SiteFooter.astro'
+import '@fontsource-variable/inter'
+import '@/styles/global.css'
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+
+const recentPosts = allPosts.slice(0, 10)
+
+const categories = [...new Set(allPosts.map((p) => p.data.category))]
+const postsByCategory = categories.map((category) => ({
+  category,
+  posts: allPosts.filter((p) => p.data.category === category),
+}))
+
+const formatDate = (date: Date) => {
+  const month = date.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' })
+  return `${month} ${date.getUTCDate()} ${date.getUTCFullYear()}`
+}
+
+const title = `Blog — ${me.fullName}`
+---
+
+<!doctype html>
+<html lang='es' data-theme='dark'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>{title}</title>
+  <script is:inline>
+    localStorage.theme = 'dark'
+    document.documentElement.dataset.theme = 'dark'
+  </script>
+</head>
+<body style="background: #1e1e21; color: #e4e4e7; min-height: 100vh;">
+  <div class="max-w-[816px] mx-auto px-6 md:px-12 py-8 md:py-12 lg:pb-24">
+
+    <a
+      href="/"
+      class="back-link inline-flex items-center gap-2 text-sm font-medium mb-6 transition-colors duration-200"
+      style="color: #d4d4d8"
+    >
+      ← {me.fullName}
+    </a>
+
+    <div class="sheet">
+
+    {allPosts.length === 0 ? (
+      <p style="color: #d4d4d8">Todavía no hay posts.</p>
+    ) : (
+      <>
+        <h2 class="text-lg font-semibold mt-0 mb-2" style="color: #ffffff">Most recent 10 posts</h2>
+        <ul class="mb-6">
+          {recentPosts.map((post) => (
+            <li class="post-row grid grid-cols-[6rem_1fr] gap-4 py-0.5">
+              <time class="text-xs" style="color: #71717a">{formatDate(post.data.date)}</time>
+              <a href={`/blog/${post.id}`} class="post-link text-sm" style="color: #d4d4d8">{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        {postsByCategory.map(({ category, posts }) => (
+          <>
+            <h2 class="text-lg font-semibold mt-6 mb-2" style="color: #ffffff">{category}</h2>
+            <ul>
+              {posts.map((post) => (
+                <li class="post-row grid grid-cols-[6rem_1fr] gap-4 py-0.5">
+                  <time class="text-xs" style="color: #71717a">{formatDate(post.data.date)}</time>
+                  <a href={`/blog/${post.id}`} class="post-link text-sm" style="color: #d4d4d8">{post.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        ))}
+      </>
+    )}
+
+    </div>
+
+  </div>
+  <SiteFooter />
+</body>
+</html>
+
+<style>
+  .back-link:hover {
+    color: #d4a373 !important;
+  }
+  .post-link:hover {
+    color: #d4a373 !important;
+  }
+  .sheet {
+    font-family: var(--font-mono);
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    padding: 2.5rem 2rem;
+  }
+  @media (min-width: 768px) {
+    .sheet {
+      padding: 3.5rem 4rem;
+    }
+  }
+</style>
