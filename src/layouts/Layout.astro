@@ -4,7 +4,6 @@ import '@/styles/global.css'
 import Sidebar from '@/components/ui/Sidebar.astro'
 import MobileNav from '@/components/ui/MobileNav.astro'
 import MobileHeader from '@/components/ui/MobileHeader.astro'
-import ParticlesBackground from '@/components/ui/ParticlesBackground.astro'
 import me from '@/data/me.json'
 import { HTMLtoText } from '@/utils'
 
@@ -26,24 +25,16 @@ const { title } = Astro.props
 		<meta property='og:type' content='website' />
 		<meta property='og:title' content={title} />
 		<meta property='og:description' content={HTMLtoText(me.description)} />
-		<meta property='og:image' content='/favicon.png' />
+		<meta property='og:image' content='/og-preview.png' />
 		<meta property='og:locale' content='es_CO' />
 
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:title' content={title} />
 		<meta name='twitter:description' content={HTMLtoText(me.description)} />
+		<meta name='twitter:image' content='/og-preview.png' />
 
 		<meta name='author' content={me.fullName} />
 		<meta name='keywords' content='DevOps, Infrastructure Engineer, Linux, Red Hat, Ansible, Docker, Kubernetes, AWS, Cloud' />
-
-
-		<!-- Google Fonts: Fraunces -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
-
-		<!-- Iconify -->
-		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 
 		<script is:inline>
 			// Siempre dark por defecto — limpiar preferencia anterior
@@ -71,7 +62,6 @@ const { title } = Astro.props
 				<div class="lg:flex lg:justify-between lg:gap-4">
 					<Sidebar />
 					<main id="content" class="pt-2 pb-28 lg:pb-0 lg:w-[52%] lg:py-24 relative">
-						<ParticlesBackground />
 						<slot />
 					</main>
 				</div>
